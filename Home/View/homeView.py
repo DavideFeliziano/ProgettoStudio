@@ -304,4 +304,4 @@ class Ui_Form(object):
         self.pushButton_4.setText(_translate("Form", "Clienti"))
         self.pushButton_2.setText(_translate("Form", "Modifica"))
         self.pushButton_3.setText(_translate("Form", "Dipendenti"))
-import homeqrc_rc
+#import homeqrc_rc
