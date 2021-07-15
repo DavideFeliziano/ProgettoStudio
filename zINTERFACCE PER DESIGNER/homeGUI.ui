@@ -208,28 +208,6 @@ padding-right: 30px;
     </item>
    </layout>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>820</x>
-     <y>90</y>
-     <width>591</width>
-     <height>791</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Times New Roman</family>
-     <pointsize>36</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>4 prenotazioni possibili con un nome quindi 4 righe</string>
-   </property>
-  </widget>
   <widget class="QWidget" name="gridLayoutWidget_2">
    <property name="geometry">
     <rect>
@@ -361,6 +339,42 @@ padding-right: 30px;
      </widget>
     </item>
    </layout>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>90</y>
+     <width>591</width>
+     <height>791</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView
+{
+border: 5px solid rgb(0, 85, 255);
+background-color: rgb(255, 0, 127);
+padding-left: 30px;
+padding-right: 30px;
+color: rgb(0, 85, 255);
+}
+
+QListView:hover
+{
+border: 5px solid rgb(255, 0, 255);
+background-color: rgb(255, 85, 0);
+padding-left: 30px;
+padding-right: 30px;
+}
+
+QListView:pressed
+{
+border: 5px solid rgb(255, 239, 14);
+background-color:rgb(255, 255, 0);
+padding-left: 30px;
+padding-right: 30px;
+}</string>
+   </property>
   </widget>
  </widget>
  <resources>
