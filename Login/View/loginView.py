@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+from Login.Model import Utente
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
