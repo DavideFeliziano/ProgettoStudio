@@ -305,3 +305,4 @@ class Ui_Form(object):
         self.pushButton_2.setText(_translate("Form", "Modifica"))
         self.pushButton_3.setText(_translate("Form", "Dipendenti"))
 import Home.View.home_rc
+#a quanto pare basta metterci Home.View e funziona dio impestato

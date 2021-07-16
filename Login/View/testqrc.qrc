@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="testBackground">
+    <file>logo.png</file>
+    <file>sfondo.jpg</file>
+  </qresource>
+</RCC>
