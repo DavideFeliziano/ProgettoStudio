@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1356</width>
+    <height>823</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Inserisci Prenotazione</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1401</width>
+     <height>831</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="testqrc.qrc">:/testBackground/sfondo.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>20</y>
+     <width>551</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="2" column="0">
+     <widget class="QRadioButton" name="radioButton">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QRadioButton:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QRadioButton:focus
+{
+	border: 2px solid rgb(255, 239, 14);
+}</string>
+      </property>
+      <property name="text">
+       <string>Sala Prove</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QRadioButton" name="radioButton_3">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QRadioButton:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QRadioButton:focus
+{
+	border: 2px solid rgb(255, 239, 14);
+}</string>
+      </property>
+      <property name="text">
+       <string>Mix e Master</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QLabel:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Data</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="3" column="0">
+     <widget class="QRadioButton" name="radioButton_2">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QRadioButton
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QRadioButton:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QRadioButton:focus
+{
+	border: 2px solid rgb(255, 239, 14);
+}</string>
+      </property>
+      <property name="text">
+       <string>Incisione</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>720</y>
+     <width>321</width>
+     <height>65</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>36</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QPushButton:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QLineEdit: pressed
+{
+	border: 5px solid rgb(255, 239, 14);
+	background-color: rgb(255, 170, 0)
+	padding-left: 30px;
+	padding-right: 30px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>SALVA</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>651</width>
+     <height>651</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QListView:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QListView:focus
+{
+	border: 2px solid rgb(255, 239, 14);
+}</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="testqrc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

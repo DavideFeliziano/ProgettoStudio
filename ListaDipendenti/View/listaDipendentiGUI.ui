@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>928</width>
+    <height>782</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Lista Dipendenti</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QLineEdit{
+border: 5px solid rgb(0, 85, 255);
+background-color: rgb(255, 0, 127);
+padding-left: 30px;
+padding-right: 30px;
+color: rgb(0, 85, 255);
+}
+
+QLineEdit:hover
+{
+border: 5px solid rgb(255, 0, 255);
+background-color: rgb(255, 85, 0);
+padding-left: 30px;
+padding-right: 30px;
+}
+
+QLineEdit: focus
+{
+border: 2px solid rgb(255, 239, 14);
+}
+
+QPushButton
+{
+border: 5px solid rgb(0, 85, 255);
+background-color: rgb(255, 0, 127);
+padding-left: 30px;
+padding-right: 30px;
+color: rgb(0, 85, 255);
+}
+
+QPushButton: hover
+{
+border: 5px solid rgb(255, 0, 255);
+background-color: rgb(255, 85, 0);
+padding-left: 30px;
+padding-right: 30px;
+}
+
+QLineEdit: pressed
+{
+border: 5px solid rgb(255, 239, 14);
+background-color: rgb(255, 170, 0)
+padding-left: 30px;
+padding-right: 30px;
+}
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1431</width>
+     <height>781</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="clientiqrc.qrc">:/clientprefix/sfondo.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>20</y>
+     <width>331</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QPushButton" name="pushButton">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border: 5px solid rgb(0, 85, 255);
+background-color: rgb(255, 0, 127);
+padding-left: 30px;
+padding-right: 30px;
+color: rgb(0, 85, 255);
+}
+
+QPushButton:hover
+{
+border: 5px solid rgb(255, 0, 255);
+background-color: rgb(255, 85, 0);
+padding-left: 30px;
+padding-right: 30px;
+}
+
+QLineEdit: pressed
+{
+border: 5px solid rgb(255, 239, 14);
+background-color: rgb(255, 170, 0)
+padding-left: 30px;
+padding-right: 30px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Nuovo</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="pushButton_2">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border: 5px solid rgb(0, 85, 255);
+background-color: rgb(255, 0, 127);
+padding-left: 30px;
+padding-right: 30px;
+color: rgb(0, 85, 255);
+}
+
+QPushButton:hover
+{
+border: 5px solid rgb(255, 0, 255);
+background-color: rgb(255, 85, 0);
+padding-left: 30px;
+padding-right: 30px;
+}
+
+QLineEdit: pressed
+{
+border: 5px solid rgb(255, 239, 14);
+background-color: rgb(255, 170, 0)
+padding-left: 30px;
+padding-right: 30px;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Visualizza</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QListView" name="listView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>20</y>
+     <width>401</width>
+     <height>741</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QListView
+{
+border: 5px solid rgb(0, 85, 255);
+background-color: rgb(255, 0, 127);
+padding-left: 30px;
+padding-right: 30px;
+color: rgb(0, 85, 255);
+}
+
+QListView:hover
+{
+border: 5px solid rgb(255, 0, 255);
+background-color: rgb(255, 85, 0);
+padding-left: 30px;
+padding-right: 30px;
+}
+
+QListView:pressed
+{
+border: 5px solid rgb(255, 239, 14);
+background-color: rgb(255, 170, 0)
+padding-left: 30px;
+padding-right: 30px;
+}
+</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="clientiqrc.qrc"/>
+ </resources>
+ <connections/>
+</ui>
