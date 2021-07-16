@@ -1,9 +1,9 @@
 
 import sys
+import Home.View.home_rc
 
-import PyQt5
+
 from PyQt5.QtWidgets import QApplication, QMainWindow
-
 
 from Home.View.homeView import Ui_Form
 

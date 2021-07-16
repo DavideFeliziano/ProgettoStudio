@@ -82,7 +82,7 @@ padding-right: 30px;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="homeqrc.qrc">:/homeprefix/sfondo.jpg</pixmap>
+    <pixmap resource="../Home/View/home.qrc">:/home/sfondo.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -378,7 +378,7 @@ padding-right: 30px;
   </widget>
  </widget>
  <resources>
-  <include location="homeqrc.qrc"/>
+  <include location="../Home/View/home.qrc"/>
  </resources>
  <connections/>
 </ui>

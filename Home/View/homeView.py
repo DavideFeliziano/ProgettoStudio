@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'homeGUI.ui'
+# Form implementation generated from reading ui file 'home.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -70,7 +70,7 @@ class Ui_Form(object):
         self.label = QtWidgets.QLabel(Form)
         self.label.setGeometry(QtCore.QRect(0, 0, 1431, 901))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/homeprefix/sfondo.jpg"))
+        self.label.setPixmap(QtGui.QPixmap(":/home/sfondo.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.calendarWidget = QtWidgets.QCalendarWidget(Form)
@@ -304,4 +304,4 @@ class Ui_Form(object):
         self.pushButton_4.setText(_translate("Form", "Clienti"))
         self.pushButton_2.setText(_translate("Form", "Modifica"))
         self.pushButton_3.setText(_translate("Form", "Dipendenti"))
-#import homeqrc_rc
+import Home.View.home_rc
