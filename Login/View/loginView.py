@@ -33,7 +33,7 @@ class Ui_MainWindow(object):
         font.setPointSize(72)
         self.label.setFont(font)
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/testBackground/logo.png"))
+        self.label.setPixmap(QtGui.QPixmap(":/login/logo.png"))
         self.label.setObjectName("label")
         self.gridLayoutWidget = QtWidgets.QWidget(self.centralwidget)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(50, 300, 1211, 441))
@@ -131,7 +131,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(0, 0, 1301, 761))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap(":/testBackground/sfondo.jpg"))
+        self.label_2.setPixmap(QtGui.QPixmap(":/login/sfondo.jpg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.label_2.raise_()
@@ -148,4 +148,4 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "ACCEDI"))
         self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Password"))
         self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Nome Utente"))
-import testqrc_rc
+import Login.View.login_rc

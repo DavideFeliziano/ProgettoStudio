@@ -48,7 +48,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="testqrc.qrc">:/testBackground/logo.png</pixmap>
+     <pixmap resource="login.qrc">:/login/logo.png</pixmap>
     </property>
    </widget>
    <widget class="QWidget" name="gridLayoutWidget">
@@ -189,7 +189,7 @@ QLineEdit: focus
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="testqrc.qrc">:/testBackground/sfondo.jpg</pixmap>
+     <pixmap resource="login.qrc">:/login/sfondo.jpg</pixmap>
     </property>
     <property name="scaledContents">
      <bool>true</bool>
@@ -201,7 +201,7 @@ QLineEdit: focus
   </widget>
  </widget>
  <resources>
-  <include location="testqrc.qrc"/>
+  <include location="login.qrc"/>
  </resources>
  <connections/>
 </ui>
