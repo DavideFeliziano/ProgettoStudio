@@ -189,7 +189,7 @@ padding-right: 30px;
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="Nome">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -223,7 +223,7 @@ padding-right: 30px;
 }</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Nome</string>
       </property>
      </widget>
     </item>
@@ -262,7 +262,7 @@ padding-right: 30px;
 }</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Cognome</string>
       </property>
      </widget>
     </item>
@@ -301,7 +301,7 @@ padding-right: 30px;
 }</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Email</string>
       </property>
      </widget>
     </item>
@@ -340,7 +340,7 @@ padding-right: 30px;
 }</string>
       </property>
       <property name="text">
-       <string/>
+       <string>Cellulare</string>
       </property>
      </widget>
     </item>
