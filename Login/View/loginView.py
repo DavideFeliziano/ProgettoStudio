@@ -12,6 +12,8 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 
 from Home.View.homeView import Ui_Form
+import json
+import os
 
 
 class Ui_MainWindow(object):
@@ -163,6 +165,7 @@ class Ui_MainWindow(object):
         self.accessControl()
         if self.test == 0:
             print("kitemmurt")
+            QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
         else:
             self.Form.show()
 
@@ -172,8 +175,67 @@ class Ui_MainWindow(object):
         print(self.passwordLineEdit.text())
         user = self.userLineEdit.text()
         pas = self.passwordLineEdit.text()
-        self.test = 1
+        #self.test = 1
         #manca lettura file
+        if not len(user or pas) < 1:
+            if True:
+                print("sono nell'if")
+                filename = 'ProgettoStudio/Login/View/utenti.txt'
+                with open(os.path.join(os.path.dirname(__file__), 'utenti.txt')) as file_object:
+                    contents = file_object.read()
+                    print(contents)
+
+                # db = open("utenti.txt", "r")
+                db = contents
+                print("aperto file")
+                utentiLista = []
+                passwordLista = []
+                for i in db:
+                        print("sono nel for")
+                        # a,b = i.split(", ")
+                        porcodiomorto = db.split()
+                        print(porcodiomorto)
+                        print("splittato")
+                        u = porcodiomorto[0]
+                        p = porcodiomorto[1]
+                        print("i porcoddio stronzo in croce di campi singoli porcacciamadonna troia di merda: ", u, " ", p)
+                        # b = b.strip()
+                        # c = a, b
+                        # utentiLista.append(a)
+                        utentiLista.append(u)
+                        # passwordLista.append(b)
+                        passwordLista.append(p)
+
+                print("finito il for")
+                data = dict(zip(utentiLista, passwordLista))
+                print("PORCODDIPORCODDIOPORCODDIO:",data)
+                try:
+                    if data[user]:
+                        try:
+                            if pas == data[user]:
+                                print("Login success!")
+                                print("Hi", user)
+                                self.test = 1
+                            else:
+                                print("Incorrect password or username")
+                                QMessageBox.critical(self, 'Errore', 'credenziali errate',QMessageBox.Ok,QMessageBox.Ok)
+                        except:
+                            print("Incorrect password or username")
+                            # QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
+
+
+                    else:
+                        print("Password or username doesn't exist")
+                        QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
+                except:
+                    print("Password or username doesn't exist")
+                    QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
+
+            else:
+                print("Error logging into the system")
+        else:
+            print("Please attempt login again")
+            self.accessControl()
 
         # QMessageBox.critical(self, 'Accesso Negato', 'Le credenziali inserite sono errate', QMessageBox.Ok,
         #                      QMessageBox.Ok)
