@@ -284,4 +284,4 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Visualizza Cliente"))
         self.pushButton_2.setText(_translate("Form", "Modifica"))
         self.pushButton.setText(_translate("Form", "Elimina"))
-import clientiqrc_rc
+import clientiqrc.qrc
