@@ -9,7 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from Login.Model import Utente
+from PyQt5.QtWidgets import QMessageBox
+
+from Home.View.homeView import Ui_Form
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -41,12 +44,12 @@ class Ui_MainWindow(object):
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.pushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.loginButton = QtWidgets.QPushButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton\n"
+        self.loginButton.setFont(font)
+        self.loginButton.setStyleSheet("QPushButton\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -71,14 +74,14 @@ class Ui_MainWindow(object):
 "    padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 8, 0, 1, 1, QtCore.Qt.AlignHCenter)
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        self.loginButton.setObjectName("loginButton")
+        self.gridLayout.addWidget(self.loginButton, 8, 0, 1, 1, QtCore.Qt.AlignHCenter)
+        self.passwordLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("QLineEdit{\n"
+        self.passwordLineEdit.setFont(font)
+        self.passwordLineEdit.setStyleSheet("QLineEdit{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
 "    padding-left: 30px;\n"
@@ -98,15 +101,15 @@ class Ui_MainWindow(object):
 "{\n"
 "    border: 2px solid rgb(255, 239, 14);\n"
 "}")
-        self.lineEdit_3.setEchoMode(QtWidgets.QLineEdit.Password)
-        self.lineEdit_3.setObjectName("lineEdit_3")
-        self.gridLayout.addWidget(self.lineEdit_3, 7, 0, 1, 1, QtCore.Qt.AlignHCenter)
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        self.passwordLineEdit.setEchoMode(QtWidgets.QLineEdit.Password)
+        self.passwordLineEdit.setObjectName("passwordLineEdit")
+        self.gridLayout.addWidget(self.passwordLineEdit, 7, 0, 1, 1, QtCore.Qt.AlignHCenter)
+        self.userLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("QLineEdit{\n"
+        self.userLineEdit.setFont(font)
+        self.userLineEdit.setStyleSheet("QLineEdit{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
 "    padding-left: 30px;\n"
@@ -126,8 +129,8 @@ class Ui_MainWindow(object):
 "{\n"
 "    border: 2px solid rgb(255, 239, 14);\n"
 "}")
-        self.lineEdit_2.setObjectName("lineEdit_2")
-        self.gridLayout.addWidget(self.lineEdit_2, 6, 0, 1, 1, QtCore.Qt.AlignHCenter)
+        self.userLineEdit.setObjectName("userLineEdit")
+        self.gridLayout.addWidget(self.userLineEdit, 6, 0, 1, 1, QtCore.Qt.AlignHCenter)
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(0, 0, 1301, 761))
         self.label_2.setText("")
@@ -141,11 +144,34 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+        self.loginButton.clicked.connect(self.access) #LINK DEL BUTTON LOGIN
+
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Reheasal Room Booker"))
-        self.pushButton.setText(_translate("MainWindow", "ACCEDI"))
-        self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Password"))
-        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Nome Utente"))
+        self.loginButton.setText(_translate("MainWindow", "ACCEDI"))
+        self.passwordLineEdit.setPlaceholderText(_translate("MainWindow", "Password"))
+        self.userLineEdit.setPlaceholderText(_translate("MainWindow", "Nome Utente"))
+
+    #Metodo che apre la finestra Home
+    def access(self):
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = Ui_Form()
+        self.ui.setupUi(self.Form)
+        self.accessControl()
+        self.Form.show()
+
+    #Metodo che controlla i campi inseriti
+    def accessControl(self):
+        print(self.userLineEdit.text())
+        print(self.passwordLineEdit.text())
+        user = self.userLineEdit.text()
+        pas = self.passwordLineEdit.text()
+        #manca lettura file
+
+        # QMessageBox.critical(self, 'Accesso Negato', 'Le credenziali inserite sono errate', QMessageBox.Ok,
+        #                      QMessageBox.Ok)
 import Login.View.login_rc
+
+

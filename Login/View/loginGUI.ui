@@ -62,7 +62,7 @@
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <item row="8" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="loginButton">
        <property name="font">
         <font>
          <family>Times New Roman</family>
@@ -102,7 +102,7 @@ QLineEdit: pressed
       </widget>
      </item>
      <item row="7" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QLineEdit" name="lineEdit_3">
+      <widget class="QLineEdit" name="passwordLineEdit">
        <property name="font">
         <font>
          <family>Times New Roman</family>
@@ -140,7 +140,7 @@ QLineEdit: focus
       </widget>
      </item>
      <item row="6" column="0" alignment="Qt::AlignHCenter">
-      <widget class="QLineEdit" name="lineEdit_2">
+      <widget class="QLineEdit" name="userLineEdit">
        <property name="font">
         <font>
          <family>Times New Roman</family>

@@ -11,33 +11,36 @@ import os.path
 import sys
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt5 import QtCore, QtGui, QtWidgets
 from Login.View import loginView
+from Login.View.loginView import Ui_MainWindow
 
-class Login():#QDialog):
+class LoginController():#QDialog):
     def __init__(self):
         super(Login,self).__init__()
         #loadUi("login.ui",self)
-        self.pushButton.clicked.connect(self.loginfunction)
+        #self.loginButton.clicked.connect(self.loginfunction)
+        self.loginButton.clicke.connect(self.test())
        # self.password.setEchoMode(QtWidgets.QLineEdit.Password)
         #self.createaccbutton.clicked.connect(self.gotocreate)
 
+        prova = Login.View.loginView.passwordLineEdit
+
+    def test(self):
+        user = self.userLineEdit.text()
+        password = self.passwordLineEdit.text()
+        print("hai scritto: ", user, " ",password)
+
+
     def loginfunction(self):
 
-        user=self.lineEdit_3.text
-        password=self.lineEdit_2.text()
+        user=self.userLineEdit.text()
+        password=self.passwordLineEdit.text()
         print(user)
         print(password)
         print("Successfully logged in with email: ", user, "and password:", password)
 
 
-#app=QApplication(sys.argv)
-#mainwindow=Login()
-#widget=QtWidgets.QStackedWidget()
-#widget.addWidget(mainwindow)
-#widget.setFixedWidth(480)
-#widget.setFixedHeight(620)
-#widget.show()
 
-#app.exec_()
 
 

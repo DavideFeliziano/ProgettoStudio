@@ -67,20 +67,20 @@ class Ui_Form(object):
 "}\n"
 "\n"
 "")
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(0, 0, 1431, 901))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/home/sfondo.jpg"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
-        self.calendarWidget = QtWidgets.QCalendarWidget(Form)
-        self.calendarWidget.setGeometry(QtCore.QRect(10, 10, 781, 511))
+        self.backgroundLabel = QtWidgets.QLabel(Form)
+        self.backgroundLabel.setGeometry(QtCore.QRect(0, 0, 1431, 901))
+        self.backgroundLabel.setText("")
+        self.backgroundLabel.setPixmap(QtGui.QPixmap(":/home/sfondo.jpg"))
+        self.backgroundLabel.setScaledContents(True)
+        self.backgroundLabel.setObjectName("backgroundLabel")
+        self.calendario = QtWidgets.QCalendarWidget(Form)
+        self.calendario.setGeometry(QtCore.QRect(10, 10, 781, 511))
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.calendarWidget.setFont(font)
-        self.calendarWidget.setMouseTracking(True)
-        self.calendarWidget.setStyleSheet("QCalendarWidget QWidget\n"
+        self.calendario.setFont(font)
+        self.calendario.setMouseTracking(True)
+        self.calendario.setStyleSheet("QCalendarWidget QWidget\n"
 "{\n"
 "alternate-background-color: rgb(255, 85, 0);\n"
 "border: 5px solid rgb(0, 85, 255);\n"
@@ -124,20 +124,20 @@ class Ui_Form(object):
 "\n"
 "\n"
 "}")
-        self.calendarWidget.setGridVisible(True)
-        self.calendarWidget.setObjectName("calendarWidget")
+        self.calendario.setGridVisible(True)
+        self.calendario.setObjectName("calendario")
         self.gridLayoutWidget = QtWidgets.QWidget(Form)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(820, 0, 591, 81))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.pushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.nuovaPrenotazioneButton = QtWidgets.QPushButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton\n"
+        self.nuovaPrenotazioneButton.setFont(font)
+        self.nuovaPrenotazioneButton.setStyleSheet("QPushButton\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -162,20 +162,20 @@ class Ui_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 1, 0, 1, 1)
+        self.nuovaPrenotazioneButton.setObjectName("nuovaPrenotazioneButton")
+        self.gridLayout.addWidget(self.nuovaPrenotazioneButton, 1, 0, 1, 1)
         self.gridLayoutWidget_2 = QtWidgets.QWidget(Form)
         self.gridLayoutWidget_2.setGeometry(QtCore.QRect(180, 530, 481, 351))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.pushButton_4 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.clientiButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton_4.setFont(font)
-        self.pushButton_4.setStyleSheet("QPushButton\n"
+        self.clientiButton.setFont(font)
+        self.clientiButton.setStyleSheet("QPushButton\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -200,14 +200,14 @@ class Ui_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.gridLayout_2.addWidget(self.pushButton_4, 0, 0, 1, 1)
-        self.pushButton_2 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.clientiButton.setObjectName("clientiButton")
+        self.gridLayout_2.addWidget(self.clientiButton, 0, 0, 1, 1)
+        self.impostazioniButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("QPushButton\n"
+        self.impostazioniButton.setFont(font)
+        self.impostazioniButton.setStyleSheet("QPushButton\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -232,14 +232,14 @@ class Ui_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.gridLayout_2.addWidget(self.pushButton_2, 3, 0, 1, 1)
-        self.pushButton_3 = QtWidgets.QPushButton(self.gridLayoutWidget_2)
+        self.impostazioniButton.setObjectName("impostazioniButton")
+        self.gridLayout_2.addWidget(self.impostazioniButton, 3, 0, 1, 1)
+        self.dipendentiButton = QtWidgets.QPushButton(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setStyleSheet("QPushButton\n"
+        self.dipendentiButton.setFont(font)
+        self.dipendentiButton.setStyleSheet("QPushButton\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -264,11 +264,11 @@ class Ui_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton_3.setObjectName("pushButton_3")
-        self.gridLayout_2.addWidget(self.pushButton_3, 1, 0, 1, 1)
-        self.listView = QtWidgets.QListView(Form)
-        self.listView.setGeometry(QtCore.QRect(820, 90, 591, 791))
-        self.listView.setStyleSheet("QListView\n"
+        self.dipendentiButton.setObjectName("dipendentiButton")
+        self.gridLayout_2.addWidget(self.dipendentiButton, 1, 0, 1, 1)
+        self.prenotazioniListView = QtWidgets.QListView(Form)
+        self.prenotazioniListView.setGeometry(QtCore.QRect(820, 90, 591, 791))
+        self.prenotazioniListView.setStyleSheet("QListView\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -292,7 +292,7 @@ class Ui_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.listView.setObjectName("listView")
+        self.prenotazioniListView.setObjectName("prenotazioniListView")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -300,9 +300,8 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Reheasal Room Booker Home"))
-        self.pushButton.setText(_translate("Form", "Nuovo"))
-        self.pushButton_4.setText(_translate("Form", "Clienti"))
-        self.pushButton_2.setText(_translate("Form", "Modifica"))
-        self.pushButton_3.setText(_translate("Form", "Dipendenti"))
+        self.nuovaPrenotazioneButton.setText(_translate("Form", "Nuovo"))
+        self.clientiButton.setText(_translate("Form", "Clienti"))
+        self.impostazioniButton.setText(_translate("Form", "Impostazioni"))
+        self.dipendentiButton.setText(_translate("Form", "Dipendenti"))
 import Home.View.home_rc
-#a quanto pare basta metterci Home.View e funziona
