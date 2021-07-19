@@ -145,7 +145,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         self.loginButton.clicked.connect(self.access) #LINK DEL BUTTON LOGIN
-
+        self.test = 0
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
@@ -159,8 +159,12 @@ class Ui_MainWindow(object):
         self.Form = QtWidgets.QMainWindow()
         self.ui = Ui_Form()
         self.ui.setupUi(self.Form)
+        self.test = 0
         self.accessControl()
-        self.Form.show()
+        if self.test == 0:
+            print("kitemmurt")
+        else:
+            self.Form.show()
 
     #Metodo che controlla i campi inseriti
     def accessControl(self):
@@ -168,6 +172,7 @@ class Ui_MainWindow(object):
         print(self.passwordLineEdit.text())
         user = self.userLineEdit.text()
         pas = self.passwordLineEdit.text()
+        self.test = 1
         #manca lettura file
 
         # QMessageBox.critical(self, 'Accesso Negato', 'Le credenziali inserite sono errate', QMessageBox.Ok,
