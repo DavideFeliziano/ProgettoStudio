@@ -69,7 +69,7 @@ padding-right: 30px;
 
 </string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="backgroundLabel">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -88,7 +88,7 @@ padding-right: 30px;
     <bool>true</bool>
    </property>
   </widget>
-  <widget class="QCalendarWidget" name="calendarWidget">
+  <widget class="QCalendarWidget" name="calendario">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -167,7 +167,7 @@ background-color: rgb(255, 85, 0);
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="nuovaPrenotazioneButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -219,7 +219,7 @@ padding-right: 30px;
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="clientiButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -259,7 +259,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="impostazioniButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -294,12 +294,12 @@ padding-right: 30px;
 </string>
       </property>
       <property name="text">
-       <string>Modifica</string>
+       <string>Impostazioni</string>
       </property>
      </widget>
     </item>
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="dipendentiButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -340,7 +340,7 @@ padding-right: 30px;
     </item>
    </layout>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QListView" name="prenotazioniListView">
    <property name="geometry">
     <rect>
      <x>820</x>

@@ -1,29 +1,42 @@
-
 import sys
-
 import self as self
 
-import Home.View.home_rc
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QDialog, QApplication, QMainWindow
+from PyQt5 import QtCore, QtGui, QtWidgets
 
-
-from PyQt5.QtWidgets import QApplication, QMainWindow
-
-#from Home.View.homeView import Ui_Form
+from Home.View.homeView import Ui_Form
 from Login.View.loginView import Ui_MainWindow
 
 
-class Main(QMainWindow):
+class LoginClass(QMainWindow):
     def __init__(self):
-        super(Main, self).__init__()
-
-        # build ui
+        super(LoginClass, self).__init__()
+        self.window = QMainWindow()
         self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
+        self.ui.setupUi(self.window)
+
+# class homeClass(object):
+#     def __init__(self):
+#         super(homeClass, self).__init__()
+#         self.win = Ui_Form()
+#         self.ui = Ui_Form()
+#         self.ui.setupUi(self.win)
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
-    main = Main()
-    main.show()
+    # self.loginwindow= Ui_MainWindow()
+    # self.loginwindow.show()
+
+    app  = QApplication(sys.argv)
+    self.diobestia = LoginClass()
+
+    self.diobestia.window.show()
+    # mainwin = QMainWindow()
+    # Form = QtWidgets.QWidget()
+    # ui = Ui_MainWindow()
+    # ui.setupUi(mainwin)
+    # mainwin.show()
     sys.exit(app.exec_())
+
 
 
