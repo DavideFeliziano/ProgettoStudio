@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
+class ImpostazioniUi_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1423, 777)
@@ -390,4 +390,4 @@ class Ui_Form(object):
         self.label_6.setText(_translate("Form", "Tariffa Oraria Sala Prove: "))
         self.label_7.setText(_translate("Form", "Tariffa Oraria Incisione: "))
         self.label_4.setText(_translate("Form", "Numero Sale Disponibili: "))
-import clientiqrc_rc
+import Impostazioni.View.clientiqrc_rc
