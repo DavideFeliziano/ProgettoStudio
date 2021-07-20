@@ -80,7 +80,7 @@ padding-right: 30px;
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="clientiqrc.qrc">:/clientprefix/sfondo.jpg</pixmap>
+    <pixmap resource="dipendentiqrc.qrc">:/clientprefix/sfondo.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -97,7 +97,7 @@ padding-right: 30px;
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="Modifica_pushButton_2">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -137,7 +137,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="Elimina_pushButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -189,7 +189,7 @@ padding-right: 30px;
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="NomeDipendente_label">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -228,7 +228,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="CognomeDipendente_label">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -267,7 +267,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_5">
+     <widget class="QLabel" name="EmailDipendente_label">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -306,7 +306,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="CellulareDipendente_label">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -348,6 +348,7 @@ padding-right: 30px;
   </widget>
  </widget>
  <resources>
+  <include location="dipendentiqrc.qrc"/>
   <include location="clientiqrc.qrc"/>
  </resources>
  <connections/>
