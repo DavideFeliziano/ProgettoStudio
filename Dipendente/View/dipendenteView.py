@@ -241,6 +241,8 @@ class Ui_Form(object):
 "padding-right: 30px;\n"
 "}")
         self.label_5.setText("")
+
+        #h
         self.label_5.setObjectName("label_5")
         self.verticalLayout.addWidget(self.label_5)
         self.label_4 = QtWidgets.QLabel(self.verticalLayoutWidget)
