@@ -9,6 +9,10 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+from ListaClienti.View.listaClientiView import ListaClientiUi_Form
+from ListaDipendenti.View.listaDipendentiView import ListaDipendentiUi_Form
+from Impostazioni.View.impostazioniView import ImpostazioniUi_Form
 
 
 class Ui_Form(object):
@@ -296,6 +300,10 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.clientiButton.clicked.connect(self.goToListaClienti) # LINK DEL BUTTON CLIENTI
+        self.dipendentiButton.clicked.connect(self.goToListaDipendenti) #LINK BUTTON DIPENDENTI
+        self.impostazioniButton.clicked.connect(self.goToImpostazioni) #LINK BUTTON IMPOSTAZIONI
+        print(self.calendario.clicked)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -304,4 +312,20 @@ class Ui_Form(object):
         self.clientiButton.setText(_translate("Form", "Clienti"))
         self.impostazioniButton.setText(_translate("Form", "Impostazioni"))
         self.dipendentiButton.setText(_translate("Form", "Dipendenti"))
+
+    def goToListaClienti(self):
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ListaClientiUi_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
+    def goToListaDipendenti(self):
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ListaDipendentiUi_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
+    def goToImpostazioni(self):
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ImpostazioniUi_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
 import Home.View.home_rc

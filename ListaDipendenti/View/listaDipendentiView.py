@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
+class ListaDipendentiUi_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(928, 782)
@@ -174,4 +174,4 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Lista Dipendenti"))
         self.pushButton.setText(_translate("Form", "Nuovo"))
         self.pushButton_2.setText(_translate("Form", "Visualizza"))
-import clientiqrc_rc
+import ListaDipendenti.View.clientiqrc_rc
