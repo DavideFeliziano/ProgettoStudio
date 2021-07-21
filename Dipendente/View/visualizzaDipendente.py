@@ -246,6 +246,7 @@ class Ui_Form(object):
         font.setPointSize(36)
         self.CellulareDipendente_label.setFont(font)
         self.CellulareDipendente_label.setStyleSheet("QLabel\n"
+                                                     
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
