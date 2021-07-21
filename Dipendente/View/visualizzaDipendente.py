@@ -273,6 +273,7 @@ class Ui_Form(object):
         self.CellulareDipendente_label.setObjectName("CellulareDipendente_label")
         self.verticalLayout.addWidget(self.CellulareDipendente_label)
 
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
