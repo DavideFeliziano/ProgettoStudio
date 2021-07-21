@@ -303,6 +303,7 @@ class Ui_Form(object):
         self.clientiButton.clicked.connect(self.goToListaClienti) # LINK DEL BUTTON CLIENTI
         self.dipendentiButton.clicked.connect(self.goToListaDipendenti) #LINK BUTTON DIPENDENTI
         self.impostazioniButton.clicked.connect(self.goToImpostazioni) #LINK BUTTON IMPOSTAZIONI
+        print(self.calendario.clicked)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
