@@ -304,6 +304,7 @@ class Ui_Form(object):
         self.clientiButton.clicked.connect(self.goToListaClienti) # LINK DEL BUTTON CLIENTI
         self.dipendentiButton.clicked.connect(self.goToListaDipendenti) #LINK BUTTON DIPENDENTI
         self.impostazioniButton.clicked.connect(self.goToImpostazioni) #LINK BUTTON IMPOSTAZIONI
+        self.nuovaPrenotazioneButton.clicked.connect(self.goToInserisciPrenotazione)#LINK BUTTON INSERISCI PRENOTAZIONHE
 
 
         date = QDate(31, 12, 2020)
@@ -339,4 +340,7 @@ class Ui_Form(object):
         self.ui = ImpostazioniUi_Form()
         self.ui.setupUi(self.Form)
         self.Form.show()
+    def goToInserisciPrenotazione(self):
+        self.dataSelezionata = self.calendario.selectedDate().toString("dd-MM-yyyy")
+        print("DATA SELEZIONATA: ", self.palle)
 import Home.View.home_rc
