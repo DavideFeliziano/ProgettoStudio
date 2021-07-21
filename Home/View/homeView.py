@@ -308,9 +308,9 @@ class Ui_Form(object):
 
         date = QDate(31, 12, 2020)
         # setting date text format
-        self.calendario.setDateTextFormat(date, format)
-        self.palle = self.calendario.selectedDate()
-        print("PALLE: ", self.palle)
+        # self.calendario.setDateTextFormat(date, format)
+        # self.palle = self.calendario.selectedDate()
+        # print("PALLE: ", self.palle)
 
         # self.palle = self.calendario.dateTextFormat()
         # label.setText("Date Text format: " + str(self.palle))
