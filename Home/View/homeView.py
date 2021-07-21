@@ -14,6 +14,7 @@ from PyQt5.QtWidgets import QMessageBox, QLabel
 from ListaClienti.View.listaClientiView import ListaClientiUi_Form
 from ListaDipendenti.View.listaDipendentiView import ListaDipendentiUi_Form
 from Impostazioni.View.impostazioniView import ImpostazioniUi_Form
+from ListaPrenotazioni.View.inserisciPrenotazioneView import ListaPrenotazioniUi_Form
 
 
 class Ui_Form(object):
@@ -304,6 +305,7 @@ class Ui_Form(object):
         self.clientiButton.clicked.connect(self.goToListaClienti) # LINK DEL BUTTON CLIENTI
         self.dipendentiButton.clicked.connect(self.goToListaDipendenti) #LINK BUTTON DIPENDENTI
         self.impostazioniButton.clicked.connect(self.goToImpostazioni) #LINK BUTTON IMPOSTAZIONI
+        self.dataSelezionata = self.calendario.selectedDate().toString("dd-MM-yyyy")
         self.nuovaPrenotazioneButton.clicked.connect(self.goToInserisciPrenotazione)#LINK BUTTON INSERISCI PRENOTAZIONHE
 
 
@@ -341,6 +343,12 @@ class Ui_Form(object):
         self.ui.setupUi(self.Form)
         self.Form.show()
     def goToInserisciPrenotazione(self):
-        self.dataSelezionata = self.calendario.selectedDate().toString("dd-MM-yyyy")
-        print("DATA SELEZIONATA: ", self.palle)
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ListaPrenotazioniUi_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
+        self.data = self.dataSelezionata
+        #self.dataSelezionata = self.calendario.selectedDate().toString("dd-MM-yyyy")
+        self.ui.dataSelezionataLabel.setText(self.data)
+        print("DATA SELEZIONATA: ", self.data)
 import Home.View.home_rc

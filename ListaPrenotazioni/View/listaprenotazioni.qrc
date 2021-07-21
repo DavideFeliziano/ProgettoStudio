@@ -1,5 +1,5 @@
 <RCC>
-  <qresource prefix="clientprefix">
+  <qresource prefix="listaprenotazioni">
     <file>sfondo.jpg</file>
   </qresource>
 </RCC>
