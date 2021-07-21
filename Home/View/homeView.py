@@ -9,7 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtCore import QDate
+from PyQt5.QtWidgets import QMessageBox, QLabel
 from ListaClienti.View.listaClientiView import ListaClientiUi_Form
 from ListaDipendenti.View.listaDipendentiView import ListaDipendentiUi_Form
 from Impostazioni.View.impostazioniView import ImpostazioniUi_Form
@@ -303,7 +304,17 @@ class Ui_Form(object):
         self.clientiButton.clicked.connect(self.goToListaClienti) # LINK DEL BUTTON CLIENTI
         self.dipendentiButton.clicked.connect(self.goToListaDipendenti) #LINK BUTTON DIPENDENTI
         self.impostazioniButton.clicked.connect(self.goToImpostazioni) #LINK BUTTON IMPOSTAZIONI
-        print(self.calendario.clicked)
+
+
+        date = QDate(31, 12, 2020)
+        # setting date text format
+        self.calendario.setDateTextFormat(date, format)
+        self.palle = self.calendario.selectedDate()
+        print("PALLE: ", self.palle)
+
+        # self.palle = self.calendario.dateTextFormat()
+        # label.setText("Date Text format: " + str(self.palle))
+        # label.setText(self.palle)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate

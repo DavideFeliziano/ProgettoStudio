@@ -164,7 +164,7 @@ class Ui_MainWindow(object):
         self.test = 0
         self.accessControl()
         if self.test == 0:
-            print("kitemmurt")
+
             QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
         else:
             self.Form.show()
@@ -179,22 +179,22 @@ class Ui_MainWindow(object):
         #manca lettura file
         if not len(user or pas) < 1:
             if True:
-                print("sono nell'if")
+                # print("sono nell'if")
                 filename = 'ProgettoStudio/Login/View/utenti.txt'
                 with open(os.path.join(os.path.dirname(__file__), 'utenti.txt')) as file_object:
                     contents = file_object.read()
-                    print(contents)
+                    #print(contents)
 
                 # db = open("utenti.txt", "r")
                 db = contents
-                print("aperto file")
+                # print("aperto file")
                 utentiLista = []
                 passwordLista = []
                 #for i in db:
-                print("sono nel for")
+                # print("sono nel for")
                         # a,b = i.split(", ")
                 listaapp = db.split()
-                print(listaapp)
+                #print(listaapp)
                 indice = 0
                 for i in listaapp:
                     #uso un for e il resto di una divisione perchè le liste fanno schifo e perchè sono pigro
@@ -203,12 +203,12 @@ class Ui_MainWindow(object):
                         u = i
                         indice = indice+1
                         utentiLista.append(u)
-                        print("ho messo un utente: ",u," indice vale: ",indice)
+                        #print("ho messo un utente: ",u," indice vale: ",indice)
                     else:
                         p = listaapp[indice]
                         indice = indice+1
                         passwordLista.append(p)
-                        print("ho messo una password indice vale: ",indice)
+                        #print("ho messo una password indice vale: ",indice)
                         # b = b.strip()
                         # c = a, b
                         # utentiLista.append(a)
@@ -216,29 +216,29 @@ class Ui_MainWindow(object):
                         # passwordLista.append(b)
                 # passwordLista.append(p)
 
-                print("finito il for")
-                print("LISTA UTENTI: ",utentiLista)
-                print("LISTA PASS: ", passwordLista)
+               #print("finito il for")
+                #print("LISTA UTENTI: ",utentiLista)
+                #print("LISTA PASS: ", passwordLista)
                 data = dict(zip(utentiLista, passwordLista))
-                print("Dizionario salvato: ",data)
+                #print("Dizionario salvato: ",data)
                 # try: non ho capito se questo try serve ma non ho tempo di pensarci
                 if data[user]:
                     try:
                         if pas == data[user]:
-                            print("Login success!")
-                            print("Logged in as: ", user)
+                            #print("Login success!")
+                            #print("Logged in as: ", user)
                             self.test = 1
                         else:
-                            print("USCITO AL PRIMO ELSE")
+                            #print("USCITO AL PRIMO ELSE")
                             QMessageBox.critical(self, 'Errore', 'credenziali errate',QMessageBox.Ok,QMessageBox.Ok)
                     except:
-                        print("USCITO AL PRIMO EXCEPT")
+                        #print("USCITO AL PRIMO EXCEPT")
                         # QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
                         self.accessControl()
 
 
                 else:
-                    print("USCITO AL SECONDO ELSE")
+                    #print("USCITO AL SECONDO ELSE")
                     QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok)
                     self.accessControl()
                 # except:
@@ -249,7 +249,7 @@ class Ui_MainWindow(object):
             else:
                 print("USCITO AL TERZO ELSE")
         else:
-            print("ULTIMO ELSE")
+            #print("ULTIMO ELSE")
             self.accessControl()
 
         # QMessageBox.critical(self, 'Accesso Negato', 'Le credenziali inserite sono errate', QMessageBox.Ok,
