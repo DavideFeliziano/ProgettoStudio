@@ -1,6 +1,6 @@
-class Impostazioni():
+class ImpostazioniModel():
     def __init__(self, orarioApertura, orarioChiusura, numeroSale, tariffaSala, tariffaIncisione, tariffaMix):
-        super(Impostazioni, self).__init__()
+        super(ImpostazioniModel, self).__init__()
         self.orarioApertura = orarioApertura
         self.orarioChiusura = orarioChiusura
         self.numeroSale = numeroSale
