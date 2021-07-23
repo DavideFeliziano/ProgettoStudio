@@ -28,9 +28,9 @@ if __name__ == '__main__':
     # self.loginwindow.show()
 
     app  = QApplication(sys.argv)
-    self.diobestia = LoginClass()
+    self.main = LoginClass()
 
-    self.diobestia.window.show()
+    self.main.window.show()
     # mainwin = QMainWindow()
     # Form = QtWidgets.QWidget()
     # ui = Ui_MainWindow()

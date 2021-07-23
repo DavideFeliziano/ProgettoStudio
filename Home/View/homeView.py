@@ -381,5 +381,10 @@ class Ui_Form(object):
         #print("DATA SELEZIONATA: ", self.dataLocale)
     def mostraData(self):
         self.dataLocale = self.calendario.selectedDate().toString("dd-MM-yyyy")
+        test = self.dataLocale
         print("SELEZIONE CAMBIATA",self.dataLocale)
+        return test
+        #NOTA: per passare i dati alla listview, lo devo fare da qui sennò non riesco ad accedere al click
+        # sul calendario
+        #forse sta roba dovrebbe stare sul controller
 import Home.View.home_rc

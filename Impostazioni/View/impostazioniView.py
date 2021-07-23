@@ -12,14 +12,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 
 class ImpostazioniUi_Form(object):
-    def setupUi(self, Form):
-        Form.setObjectName("Form")
-        Form.resize(1423, 777)
+    def setupUi(self, ImpostazioniForm):
+        ImpostazioniForm.setObjectName("ImpostazioniForm")
+        ImpostazioniForm.resize(1423, 777)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        Form.setFont(font)
-        Form.setStyleSheet("QLineEdit{\n"
+        ImpostazioniForm.setFont(font)
+        ImpostazioniForm.setStyleSheet("QLineEdit{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
 "padding-left: 30px;\n"
@@ -65,24 +65,24 @@ class ImpostazioniUi_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.label = QtWidgets.QLabel(Form)
+        self.label = QtWidgets.QLabel(ImpostazioniForm)
         self.label.setGeometry(QtCore.QRect(0, 0, 1431, 781))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap(":/clientprefix/sfondo.jpg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
-        self.gridLayoutWidget = QtWidgets.QWidget(Form)
+        self.gridLayoutWidget = QtWidgets.QWidget(ImpostazioniForm)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(632, 640, 751, 101))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.pushButton_2 = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.salvaButton = QtWidgets.QPushButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setStyleSheet("QPushButton\n"
+        self.salvaButton.setFont(font)
+        self.salvaButton.setStyleSheet("QPushButton\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -107,14 +107,14 @@ class ImpostazioniUi_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.gridLayout.addWidget(self.pushButton_2, 1, 0, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(self.gridLayoutWidget)
+        self.salvaButton.setObjectName("salvaButton")
+        self.gridLayout.addWidget(self.salvaButton, 1, 0, 1, 1)
+        self.ripristinaButton = QtWidgets.QPushButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton\n"
+        self.ripristinaButton.setFont(font)
+        self.ripristinaButton.setStyleSheet("QPushButton\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -139,20 +139,20 @@ class ImpostazioniUi_Form(object):
 "padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.gridLayout.addWidget(self.pushButton, 1, 1, 1, 1)
-        self.gridLayoutWidget_2 = QtWidgets.QWidget(Form)
+        self.ripristinaButton.setObjectName("ripristinaButton")
+        self.gridLayout.addWidget(self.ripristinaButton, 1, 1, 1, 1)
+        self.gridLayoutWidget_2 = QtWidgets.QWidget(ImpostazioniForm)
         self.gridLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 1291, 611))
         self.gridLayoutWidget_2.setObjectName("gridLayoutWidget_2")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.gridLayoutWidget_2)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.label_8 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.tariffaMixLabel = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("QLabel\n"
+        self.tariffaMixLabel.setFont(font)
+        self.tariffaMixLabel.setStyleSheet("QLabel\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -176,14 +176,14 @@ class ImpostazioniUi_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.label_8.setObjectName("label_8")
-        self.gridLayout_2.addWidget(self.label_8, 8, 0, 1, 1)
-        self.label_2 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.tariffaMixLabel.setObjectName("tariffaMixLabel")
+        self.gridLayout_2.addWidget(self.tariffaMixLabel, 8, 0, 1, 1)
+        self.OrarioAperturaLabel = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("QLabel\n"
+        self.OrarioAperturaLabel.setFont(font)
+        self.OrarioAperturaLabel.setStyleSheet("QLabel\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -207,21 +207,21 @@ class ImpostazioniUi_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.label_2.setObjectName("label_2")
-        self.gridLayout_2.addWidget(self.label_2, 2, 0, 1, 1)
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
+        self.OrarioAperturaLabel.setObjectName("OrarioAperturaLabel")
+        self.gridLayout_2.addWidget(self.OrarioAperturaLabel, 2, 0, 1, 1)
+        self.OrarioAperturaLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_4.setFont(font)
-        self.lineEdit_4.setObjectName("lineEdit_4")
-        self.gridLayout_2.addWidget(self.lineEdit_4, 2, 1, 1, 1)
-        self.label_3 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.OrarioAperturaLineEdit.setFont(font)
+        self.OrarioAperturaLineEdit.setObjectName("OrarioAperturaLineEdit")
+        self.gridLayout_2.addWidget(self.OrarioAperturaLineEdit, 2, 1, 1, 1)
+        self.OrarioChiusuraLabel = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_3.setFont(font)
-        self.label_3.setStyleSheet("QLabel\n"
+        self.OrarioChiusuraLabel.setFont(font)
+        self.OrarioChiusuraLabel.setStyleSheet("QLabel\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -245,14 +245,14 @@ class ImpostazioniUi_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.label_3.setObjectName("label_3")
-        self.gridLayout_2.addWidget(self.label_3, 3, 0, 1, 1)
-        self.label_6 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.OrarioChiusuraLabel.setObjectName("OrarioChiusuraLabel")
+        self.gridLayout_2.addWidget(self.OrarioChiusuraLabel, 3, 0, 1, 1)
+        self.tariffaSalaProveLabel = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_6.setFont(font)
-        self.label_6.setStyleSheet("QLabel\n"
+        self.tariffaSalaProveLabel.setFont(font)
+        self.tariffaSalaProveLabel.setStyleSheet("QLabel\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -276,35 +276,35 @@ class ImpostazioniUi_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.label_6.setObjectName("label_6")
-        self.gridLayout_2.addWidget(self.label_6, 5, 0, 1, 1)
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
+        self.tariffaSalaProveLabel.setObjectName("tariffaSalaProveLabel")
+        self.gridLayout_2.addWidget(self.tariffaSalaProveLabel, 5, 0, 1, 1)
+        self.OrarioChiusuraLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_5.setFont(font)
-        self.lineEdit_5.setObjectName("lineEdit_5")
-        self.gridLayout_2.addWidget(self.lineEdit_5, 3, 1, 1, 1)
-        self.lineEdit_8 = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
+        self.OrarioChiusuraLineEdit.setFont(font)
+        self.OrarioChiusuraLineEdit.setObjectName("OrarioChiusuraLineEdit")
+        self.gridLayout_2.addWidget(self.OrarioChiusuraLineEdit, 3, 1, 1, 1)
+        self.tariffaSalaProveLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_8.setFont(font)
-        self.lineEdit_8.setObjectName("lineEdit_8")
-        self.gridLayout_2.addWidget(self.lineEdit_8, 5, 1, 1, 1)
-        self.lineEdit_10 = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
+        self.tariffaSalaProveLineEdit.setFont(font)
+        self.tariffaSalaProveLineEdit.setObjectName("tariffaSalaProveLineEdit")
+        self.gridLayout_2.addWidget(self.tariffaSalaProveLineEdit, 5, 1, 1, 1)
+        self.tariffaMixLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_10.setFont(font)
-        self.lineEdit_10.setObjectName("lineEdit_10")
-        self.gridLayout_2.addWidget(self.lineEdit_10, 8, 1, 1, 1)
-        self.label_7 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.tariffaMixLineEdit.setFont(font)
+        self.tariffaMixLineEdit.setObjectName("tariffaMixLineEdit")
+        self.gridLayout_2.addWidget(self.tariffaMixLineEdit, 8, 1, 1, 1)
+        self.tariffaIncisioneLabel = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_7.setFont(font)
-        self.label_7.setStyleSheet("QLabel\n"
+        self.tariffaIncisioneLabel.setFont(font)
+        self.tariffaIncisioneLabel.setStyleSheet("QLabel\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -328,28 +328,28 @@ class ImpostazioniUi_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.label_7.setObjectName("label_7")
-        self.gridLayout_2.addWidget(self.label_7, 6, 0, 1, 1)
-        self.lineEdit_9 = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
+        self.tariffaIncisioneLabel.setObjectName("tariffaIncisioneLabel")
+        self.gridLayout_2.addWidget(self.tariffaIncisioneLabel, 6, 0, 1, 1)
+        self.tariffaIncisioneLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_9.setFont(font)
-        self.lineEdit_9.setObjectName("lineEdit_9")
-        self.gridLayout_2.addWidget(self.lineEdit_9, 6, 1, 1, 1)
-        self.lineEdit_6 = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
+        self.tariffaIncisioneLineEdit.setFont(font)
+        self.tariffaIncisioneLineEdit.setObjectName("tariffaIncisioneLineEdit")
+        self.gridLayout_2.addWidget(self.tariffaIncisioneLineEdit, 6, 1, 1, 1)
+        self.NumeroSaleLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.lineEdit_6.setFont(font)
-        self.lineEdit_6.setObjectName("lineEdit_6")
-        self.gridLayout_2.addWidget(self.lineEdit_6, 4, 1, 1, 1)
-        self.label_4 = QtWidgets.QLabel(self.gridLayoutWidget_2)
+        self.NumeroSaleLineEdit.setFont(font)
+        self.NumeroSaleLineEdit.setObjectName("NumeroSaleLineEdit")
+        self.gridLayout_2.addWidget(self.NumeroSaleLineEdit, 4, 1, 1, 1)
+        self.NumeroSaleLabel = QtWidgets.QLabel(self.gridLayoutWidget_2)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_4.setFont(font)
-        self.label_4.setStyleSheet("QLabel\n"
+        self.NumeroSaleLabel.setFont(font)
+        self.NumeroSaleLabel.setStyleSheet("QLabel\n"
 "{\n"
 "border: 5px solid rgb(0, 85, 255);\n"
 "background-color: rgb(255, 0, 127);\n"
@@ -373,21 +373,21 @@ class ImpostazioniUi_Form(object):
 "padding-left: 30px;\n"
 "padding-right: 30px;\n"
 "}")
-        self.label_4.setObjectName("label_4")
-        self.gridLayout_2.addWidget(self.label_4, 4, 0, 1, 1)
+        self.NumeroSaleLabel.setObjectName("NumeroSaleLabel")
+        self.gridLayout_2.addWidget(self.NumeroSaleLabel, 4, 0, 1, 1)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(ImpostazioniForm)
+        QtCore.QMetaObject.connectSlotsByName(ImpostazioniForm)
 
-    def retranslateUi(self, Form):
+    def retranslateUi(self, ImpostazioniForm):
         _translate = QtCore.QCoreApplication.translate
-        Form.setWindowTitle(_translate("Form", "Impostazioni"))
-        self.pushButton_2.setText(_translate("Form", "Salva Modifiche"))
-        self.pushButton.setText(_translate("Form", "Ripristina"))
-        self.label_8.setText(_translate("Form", "Tariffa Oraria Mix e Master: "))
-        self.label_2.setText(_translate("Form", "Orario Apertura: "))
-        self.label_3.setText(_translate("Form", "Orario Chiusura: "))
-        self.label_6.setText(_translate("Form", "Tariffa Oraria Sala Prove: "))
-        self.label_7.setText(_translate("Form", "Tariffa Oraria Incisione: "))
-        self.label_4.setText(_translate("Form", "Numero Sale Disponibili: "))
+        ImpostazioniForm.setWindowTitle(_translate("ImpostazioniForm", "Impostazioni"))
+        self.salvaButton.setText(_translate("ImpostazioniForm", "Salva Modifiche"))
+        self.ripristinaButton.setText(_translate("ImpostazioniForm", "Ripristina"))
+        self.tariffaMixLabel.setText(_translate("ImpostazioniForm", "Tariffa Oraria Mix e Master: "))
+        self.OrarioAperturaLabel.setText(_translate("ImpostazioniForm", "Orario Apertura: "))
+        self.OrarioChiusuraLabel.setText(_translate("ImpostazioniForm", "Orario Chiusura: "))
+        self.tariffaSalaProveLabel.setText(_translate("ImpostazioniForm", "Tariffa Oraria Sala Prove: "))
+        self.tariffaIncisioneLabel.setText(_translate("ImpostazioniForm", "Tariffa Oraria Incisione: "))
+        self.NumeroSaleLabel.setText(_translate("ImpostazioniForm", "Numero Sale Disponibili: "))
 import Impostazioni.View.clientiqrc_rc
