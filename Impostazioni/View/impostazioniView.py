@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Impostazioni.Controller.impostazioniContreller import ImpostazioniController
 
 
 class ImpostazioniUi_Form(object):
@@ -378,6 +379,10 @@ class ImpostazioniUi_Form(object):
 
         self.retranslateUi(ImpostazioniForm)
         QtCore.QMetaObject.connectSlotsByName(ImpostazioniForm)
+
+
+        self.controller = ImpostazioniController()
+
 
     def retranslateUi(self, ImpostazioniForm):
         _translate = QtCore.QCoreApplication.translate
