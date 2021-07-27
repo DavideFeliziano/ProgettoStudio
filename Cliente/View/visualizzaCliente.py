@@ -286,4 +286,5 @@ class Ui_Form(object):
         self.cognome_label.setText(_translate("Form", "Cognome"))
         self.emailCliente_lable.setText(_translate("Form", "Email"))
         self.cellulareCliente_label.setText(_translate("Form", "Cellulare"))
+
 import Cliente.View.clientiqrc_rc

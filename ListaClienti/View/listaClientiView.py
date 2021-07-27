@@ -174,4 +174,5 @@ class ListaClientiUi_Form(object):
         Form.setWindowTitle(_translate("Form", "Lista Clienti"))
         self.pushButton.setText(_translate("Form", "Nuovo"))
         self.pushButton_2.setText(_translate("Form", "Visualizza"))
-import ListaClienti.View.clientiqrc_rc
+
+#import ListaClienti.View.clientiqrc_rc

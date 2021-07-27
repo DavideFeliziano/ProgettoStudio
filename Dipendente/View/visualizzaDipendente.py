@@ -287,4 +287,5 @@ class Ui_Form(object):
         self.EmailDipendente_label.setText(_translate("Form", "Email"))
         self.CellulareDipendente_label.setText(_translate("Form", "Cellulare"))
 
+
 import Dipendente.View.dipendentiqrc_rc

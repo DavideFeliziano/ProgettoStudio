@@ -174,4 +174,4 @@ class ListaDipendentiUi_Form(object):
         Form.setWindowTitle(_translate("Form", "Lista Dipendenti"))
         self.pushButton.setText(_translate("Form", "Nuovo"))
         self.pushButton_2.setText(_translate("Form", "Visualizza"))
-import ListaDipendenti.View.clientiqrc_rc
+#import ListaDipendenti.View.clientiqrc_rc
