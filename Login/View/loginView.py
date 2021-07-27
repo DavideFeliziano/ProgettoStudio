@@ -231,6 +231,7 @@ class Ui_MainWindow(object):
                         else:
                             #print("USCITO AL PRIMO ELSE")
                             QMessageBox.critical(self, 'Errore', 'credenziali errate',QMessageBox.Ok,QMessageBox.Ok)
+                            self.accessControl()
                     except:
                         #print("USCITO AL PRIMO EXCEPT")
                         # QMessageBox.critical(self, 'Errore', 'credenziali errate', QMessageBox.Ok, QMessageBox.Ok)
@@ -248,6 +249,7 @@ class Ui_MainWindow(object):
 
             else:
                 print("USCITO AL TERZO ELSE")
+                self.accessControl()
         else:
             #print("ULTIMO ELSE")
             self.accessControl()

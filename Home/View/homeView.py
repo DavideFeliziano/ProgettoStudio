@@ -10,10 +10,12 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import QDate
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
 from PyQt5.QtWidgets import QMessageBox, QLabel
 from ListaClienti.View.listaClientiView import ListaClientiUi_Form
 from ListaDipendenti.View.listaDipendentiView import ListaDipendentiUi_Form
 from Impostazioni.View.impostazioniView import ImpostazioniUi_Form
+from ListaPrenotazioni.View.inserisciPrenotazioneView import ListaPrenotazioniUi_Form
 
 
 class Ui_Form(object):
@@ -304,13 +306,37 @@ class Ui_Form(object):
         self.clientiButton.clicked.connect(self.goToListaClienti) # LINK DEL BUTTON CLIENTI
         self.dipendentiButton.clicked.connect(self.goToListaDipendenti) #LINK BUTTON DIPENDENTI
         self.impostazioniButton.clicked.connect(self.goToImpostazioni) #LINK BUTTON IMPOSTAZIONI
+        self.nuovaPrenotazioneButton.clicked.connect(self.goToInserisciPrenotazione)#LINK BUTTON INSERISCI PRENOTAZIONHE
+        self.dataSelezionata = self.calendario.selectedDate().toString("dd-MM-yyyy")
+        print(self.dataSelezionata)
+        self.calendario.selectionChanged.connect(self.mostraData)
+
+        #CODICE PER LA LISTVIEW
+        self.listview_model = QStandardItemModel(self.prenotazioniListView)
+        self.prenotazioniListView.show()
+        self.item =QStandardItem()
+        self.item.setText(self.dataSelezionata)
+        self.item.setEditable(False)
+        #due righe per il font
+        self.font = self.item.font()
+        self.font.setPointSize(36)
+        self.item.setFont(font)
+
+        self.listview_model.appendRow(self.item)
+        #creo un altro item per vedere se funziona la lista
+        self.item2 = QStandardItem()
+        self.item2.setText("palle")
+        self.item2.setFont(font)
+        self.listview_model.appendRow(self.item2)
+
+        self.prenotazioniListView.setModel(self.listview_model)
 
 
         date = QDate(31, 12, 2020)
         # setting date text format
-        self.calendario.setDateTextFormat(date, format)
-        self.palle = self.calendario.selectedDate()
-        print("PALLE: ", self.palle)
+        # self.calendario.setDateTextFormat(date, format)
+        # self.palle = self.calendario.selectedDate()
+        # print("PALLE: ", self.palle)
 
         # self.palle = self.calendario.dateTextFormat()
         # label.setText("Date Text format: " + str(self.palle))
@@ -339,4 +365,26 @@ class Ui_Form(object):
         self.ui = ImpostazioniUi_Form()
         self.ui.setupUi(self.Form)
         self.Form.show()
+    def goToInserisciPrenotazione(self):
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ListaPrenotazioniUi_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
+        # self.data = self.dataSelezionata.toString()
+        self.dataLocale = self.calendario.selectedDate()
+        self.dataString = self.dataLocale.toString("dd-MM-yyyy")
+        print("DATASTRING: ", self.dataString)
+        #print("tentativo: ",self.datatest)
+        #print("quella vecchia: ", self.data)
+        #self.dataSelezionata = self.calendario.selectedDate().toString("dd-MM-yyyy")
+        self.ui.dataSelezionataLabel.setText(self.dataString)
+        #print("DATA SELEZIONATA: ", self.dataLocale)
+    def mostraData(self):
+        self.dataLocale = self.calendario.selectedDate().toString("dd-MM-yyyy")
+        test = self.dataLocale
+        print("SELEZIONE CAMBIATA",self.dataLocale)
+        return test
+        #NOTA: per passare i dati alla listview, lo devo fare da qui sennò non riesco ad accedere al click
+        # sul calendario
+        #forse sta roba dovrebbe stare sul controller
 import Home.View.home_rc

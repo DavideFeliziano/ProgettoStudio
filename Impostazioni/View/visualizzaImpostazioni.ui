@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
+ <class>ImpostazioniForm</class>
+ <widget class="QWidget" name="ImpostazioniForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -97,7 +97,7 @@ padding-right: 30px;
    </property>
    <layout class="QGridLayout" name="gridLayout">
     <item row="1" column="0">
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="salvaButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -137,7 +137,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="1" column="1">
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="ripristinaButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -189,7 +189,7 @@ padding-right: 30px;
    </property>
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="8" column="0">
-     <widget class="QLabel" name="label_8">
+     <widget class="QLabel" name="tariffaMixLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -228,7 +228,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="2" column="0">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="OrarioAperturaLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -267,7 +267,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="2" column="1">
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="OrarioAperturaLineEdit">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -277,7 +277,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="3" column="0">
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="OrarioChiusuraLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -316,7 +316,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="5" column="0">
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="tariffaSalaProveLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -355,7 +355,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="3" column="1">
-     <widget class="QLineEdit" name="lineEdit_5">
+     <widget class="QLineEdit" name="OrarioChiusuraLineEdit">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -365,7 +365,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="5" column="1">
-     <widget class="QLineEdit" name="lineEdit_8">
+     <widget class="QLineEdit" name="tariffaSalaProveLineEdit">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -375,7 +375,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="8" column="1">
-     <widget class="QLineEdit" name="lineEdit_10">
+     <widget class="QLineEdit" name="tariffaMixLineEdit">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -385,7 +385,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="6" column="0">
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="tariffaIncisioneLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -424,7 +424,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QLineEdit" name="lineEdit_9">
+     <widget class="QLineEdit" name="tariffaIncisioneLineEdit">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -434,7 +434,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="4" column="1">
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QLineEdit" name="NumeroSaleLineEdit">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -444,7 +444,7 @@ padding-right: 30px;
      </widget>
     </item>
     <item row="4" column="0">
-     <widget class="QLabel" name="label_4">
+     <widget class="QLabel" name="NumeroSaleLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>

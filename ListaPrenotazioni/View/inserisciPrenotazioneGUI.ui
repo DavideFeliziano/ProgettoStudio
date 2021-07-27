@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Inserisci Prenotazione</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="sfondo">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -26,7 +26,7 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap resource="testqrc.qrc">:/testBackground/sfondo.jpg</pixmap>
+    <pixmap resource="listaprenotazioni.qrc">:/listaprenotazioni/sfondo.jpg</pixmap>
    </property>
    <property name="scaledContents">
     <bool>true</bool>
@@ -42,8 +42,8 @@
     </rect>
    </property>
    <layout class="QGridLayout" name="gridLayout">
-    <item row="2" column="0">
-     <widget class="QRadioButton" name="radioButton">
+    <item row="5" column="0">
+     <widget class="QRadioButton" name="incisioneRadioButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -74,12 +74,12 @@ QRadioButton:focus
 }</string>
       </property>
       <property name="text">
-       <string>Sala Prove</string>
+       <string>Incisione</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="0">
-     <widget class="QRadioButton" name="radioButton_3">
+    <item row="6" column="0">
+     <widget class="QRadioButton" name="mixRadioButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -115,7 +115,7 @@ QRadioButton:focus
      </widget>
     </item>
     <item row="0" column="0">
-     <widget class="QLabel" name="label_2">
+     <widget class="QLabel" name="dataSelezionataLabel">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -146,21 +146,8 @@ QLabel:hover
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <spacer name="horizontalSpacer">
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
-      </property>
-      <property name="sizeHint" stdset="0">
-       <size>
-        <width>40</width>
-        <height>20</height>
-       </size>
-      </property>
-     </spacer>
-    </item>
-    <item row="3" column="0">
-     <widget class="QRadioButton" name="radioButton_2">
+    <item row="4" column="0">
+     <widget class="QRadioButton" name="salaRadioButton">
       <property name="font">
        <font>
         <family>Times New Roman</family>
@@ -191,13 +178,106 @@ QRadioButton:focus
 }</string>
       </property>
       <property name="text">
-       <string>Incisione</string>
+       <string>Sala Prove</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLineEdit" name="oreInizioLineEdit">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QLineEdit:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QLineEdit:active
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 0, 255)
+	padding-left: 30px;
+	padding-right: 30px;
+}
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Inserisci Orario Inizio</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLineEdit" name="oreFineLineEdit">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit
+{
+	border: 5px solid rgb(0, 85, 255);
+	background-color: rgb(255, 0, 127);
+	padding-left: 30px;
+	padding-right: 30px;
+	color: rgb(0, 85, 255);
+}
+
+QLineEdit:hover
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 85, 0);
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+QLineEdit:active
+{
+	border: 5px solid rgb(255, 0, 255);
+	background-color: rgb(255, 0, 255)
+	padding-left: 30px;
+	padding-right: 30px;
+}
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Inserisci Orario Fine</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="salvaPushButton">
    <property name="geometry">
     <rect>
      <x>570</x>
@@ -243,7 +323,7 @@ QLineEdit: pressed
     <string>SALVA</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView">
+  <widget class="QListView" name="selezionaClienteListView">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -278,7 +358,7 @@ QListView:focus
   </widget>
  </widget>
  <resources>
-  <include location="testqrc.qrc"/>
+  <include location="listaprenotazioni.qrc"/>
  </resources>
  <connections/>
 </ui>

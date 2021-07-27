@@ -11,28 +11,28 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Form(object):
+class ListaPrenotazioniUi_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(1356, 823)
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(0, 0, 1401, 831))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/testBackground/sfondo.jpg"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
+        self.sfondo = QtWidgets.QLabel(Form)
+        self.sfondo.setGeometry(QtCore.QRect(0, 0, 1401, 831))
+        self.sfondo.setText("")
+        self.sfondo.setPixmap(QtGui.QPixmap(":/listaprenotazioni/sfondo.jpg"))
+        self.sfondo.setScaledContents(True)
+        self.sfondo.setObjectName("sfondo")
         self.gridLayoutWidget = QtWidgets.QWidget(Form)
         self.gridLayoutWidget.setGeometry(QtCore.QRect(770, 20, 551, 651))
         self.gridLayoutWidget.setObjectName("gridLayoutWidget")
         self.gridLayout = QtWidgets.QGridLayout(self.gridLayoutWidget)
         self.gridLayout.setContentsMargins(0, 0, 0, 0)
         self.gridLayout.setObjectName("gridLayout")
-        self.radioButton = QtWidgets.QRadioButton(self.gridLayoutWidget)
+        self.incisioneRadioButton = QtWidgets.QRadioButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.radioButton.setFont(font)
-        self.radioButton.setStyleSheet("QRadioButton\n"
+        self.incisioneRadioButton.setFont(font)
+        self.incisioneRadioButton.setStyleSheet("QRadioButton\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -53,14 +53,14 @@ class Ui_Form(object):
 "{\n"
 "    border: 2px solid rgb(255, 239, 14);\n"
 "}")
-        self.radioButton.setObjectName("radioButton")
-        self.gridLayout.addWidget(self.radioButton, 2, 0, 1, 1)
-        self.radioButton_3 = QtWidgets.QRadioButton(self.gridLayoutWidget)
+        self.incisioneRadioButton.setObjectName("incisioneRadioButton")
+        self.gridLayout.addWidget(self.incisioneRadioButton, 5, 0, 1, 1)
+        self.mixRadioButton = QtWidgets.QRadioButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.radioButton_3.setFont(font)
-        self.radioButton_3.setStyleSheet("QRadioButton\n"
+        self.mixRadioButton.setFont(font)
+        self.mixRadioButton.setStyleSheet("QRadioButton\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -81,14 +81,14 @@ class Ui_Form(object):
 "{\n"
 "    border: 2px solid rgb(255, 239, 14);\n"
 "}")
-        self.radioButton_3.setObjectName("radioButton_3")
-        self.gridLayout.addWidget(self.radioButton_3, 4, 0, 1, 1)
-        self.label_2 = QtWidgets.QLabel(self.gridLayoutWidget)
+        self.mixRadioButton.setObjectName("mixRadioButton")
+        self.gridLayout.addWidget(self.mixRadioButton, 6, 0, 1, 1)
+        self.dataSelezionataLabel = QtWidgets.QLabel(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.label_2.setFont(font)
-        self.label_2.setStyleSheet("QLabel\n"
+        self.dataSelezionataLabel.setFont(font)
+        self.dataSelezionataLabel.setStyleSheet("QLabel\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -105,16 +105,14 @@ class Ui_Form(object):
 "    padding-right: 30px;\n"
 "}\n"
 "")
-        self.label_2.setObjectName("label_2")
-        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
-        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
-        self.gridLayout.addItem(spacerItem, 1, 0, 1, 1)
-        self.radioButton_2 = QtWidgets.QRadioButton(self.gridLayoutWidget)
+        self.dataSelezionataLabel.setObjectName("dataSelezionataLabel")
+        self.gridLayout.addWidget(self.dataSelezionataLabel, 0, 0, 1, 1)
+        self.salaRadioButton = QtWidgets.QRadioButton(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.radioButton_2.setFont(font)
-        self.radioButton_2.setStyleSheet("QRadioButton\n"
+        self.salaRadioButton.setFont(font)
+        self.salaRadioButton.setStyleSheet("QRadioButton\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -135,15 +133,81 @@ class Ui_Form(object):
 "{\n"
 "    border: 2px solid rgb(255, 239, 14);\n"
 "}")
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.gridLayout.addWidget(self.radioButton_2, 3, 0, 1, 1)
-        self.pushButton = QtWidgets.QPushButton(Form)
-        self.pushButton.setGeometry(QtCore.QRect(570, 720, 321, 65))
+        self.salaRadioButton.setObjectName("salaRadioButton")
+        self.gridLayout.addWidget(self.salaRadioButton, 4, 0, 1, 1)
+        self.oreInizioLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(36)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("QPushButton\n"
+        self.oreInizioLineEdit.setFont(font)
+        self.oreInizioLineEdit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    border: 5px solid rgb(0, 85, 255);\n"
+"    background-color: rgb(255, 0, 127);\n"
+"    padding-left: 30px;\n"
+"    padding-right: 30px;\n"
+"    color: rgb(0, 85, 255);\n"
+"}\n"
+"\n"
+"QLineEdit:hover\n"
+"{\n"
+"    border: 5px solid rgb(255, 0, 255);\n"
+"    background-color: rgb(255, 85, 0);\n"
+"    padding-left: 30px;\n"
+"    padding-right: 30px;\n"
+"}\n"
+"\n"
+"QLineEdit:active\n"
+"{\n"
+"    border: 5px solid rgb(255, 0, 255);\n"
+"    background-color: rgb(255, 0, 255)\n"
+"    padding-left: 30px;\n"
+"    padding-right: 30px;\n"
+"}\n"
+"")
+        self.oreInizioLineEdit.setObjectName("oreInizioLineEdit")
+        self.gridLayout.addWidget(self.oreInizioLineEdit, 1, 0, 1, 1)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+        self.gridLayout.addItem(spacerItem, 3, 0, 1, 1)
+        self.oreFineLineEdit = QtWidgets.QLineEdit(self.gridLayoutWidget)
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(36)
+        self.oreFineLineEdit.setFont(font)
+        self.oreFineLineEdit.setStyleSheet("QLineEdit\n"
+"{\n"
+"    border: 5px solid rgb(0, 85, 255);\n"
+"    background-color: rgb(255, 0, 127);\n"
+"    padding-left: 30px;\n"
+"    padding-right: 30px;\n"
+"    color: rgb(0, 85, 255);\n"
+"}\n"
+"\n"
+"QLineEdit:hover\n"
+"{\n"
+"    border: 5px solid rgb(255, 0, 255);\n"
+"    background-color: rgb(255, 85, 0);\n"
+"    padding-left: 30px;\n"
+"    padding-right: 30px;\n"
+"}\n"
+"\n"
+"QLineEdit:active\n"
+"{\n"
+"    border: 5px solid rgb(255, 0, 255);\n"
+"    background-color: rgb(255, 0, 255)\n"
+"    padding-left: 30px;\n"
+"    padding-right: 30px;\n"
+"}\n"
+"")
+        self.oreFineLineEdit.setObjectName("oreFineLineEdit")
+        self.gridLayout.addWidget(self.oreFineLineEdit, 2, 0, 1, 1)
+        self.salvaPushButton = QtWidgets.QPushButton(Form)
+        self.salvaPushButton.setGeometry(QtCore.QRect(570, 720, 321, 65))
+        font = QtGui.QFont()
+        font.setFamily("Times New Roman")
+        font.setPointSize(36)
+        self.salvaPushButton.setFont(font)
+        self.salvaPushButton.setStyleSheet("QPushButton\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -168,10 +232,10 @@ class Ui_Form(object):
 "    padding-right: 30px;\n"
 "}\n"
 "")
-        self.pushButton.setObjectName("pushButton")
-        self.listView = QtWidgets.QListView(Form)
-        self.listView.setGeometry(QtCore.QRect(10, 20, 651, 651))
-        self.listView.setStyleSheet("QListView\n"
+        self.salvaPushButton.setObjectName("salvaPushButton")
+        self.selezionaClienteListView = QtWidgets.QListView(Form)
+        self.selezionaClienteListView.setGeometry(QtCore.QRect(10, 20, 651, 651))
+        self.selezionaClienteListView.setStyleSheet("QListView\n"
 "{\n"
 "    border: 5px solid rgb(0, 85, 255);\n"
 "    background-color: rgb(255, 0, 127);\n"
@@ -192,7 +256,7 @@ class Ui_Form(object):
 "{\n"
 "    border: 2px solid rgb(255, 239, 14);\n"
 "}")
-        self.listView.setObjectName("listView")
+        self.selezionaClienteListView.setObjectName("selezionaClienteListView")
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -200,9 +264,11 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Inserisci Prenotazione"))
-        self.radioButton.setText(_translate("Form", "Sala Prove"))
-        self.radioButton_3.setText(_translate("Form", "Mix e Master"))
-        self.label_2.setText(_translate("Form", "Data"))
-        self.radioButton_2.setText(_translate("Form", "Incisione"))
-        self.pushButton.setText(_translate("Form", "SALVA"))
-import testqrc_rc
+        self.incisioneRadioButton.setText(_translate("Form", "Incisione"))
+        self.mixRadioButton.setText(_translate("Form", "Mix e Master"))
+        self.dataSelezionataLabel.setText(_translate("Form", "Data"))
+        self.salaRadioButton.setText(_translate("Form", "Sala Prove"))
+        self.oreInizioLineEdit.setPlaceholderText(_translate("Form", "Inserisci Orario Inizio"))
+        self.oreFineLineEdit.setPlaceholderText(_translate("Form", "Inserisci Orario Fine"))
+        self.salvaPushButton.setText(_translate("Form", "SALVA"))
+import ListaPrenotazioni.View.listaprenotazioni_rc
