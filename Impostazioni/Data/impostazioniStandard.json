@@ -1,7 +1,7 @@
 {
   "orarioApertura": 8,
   "orarioChiusura": 18,
-  "NumeroSale": 3,
+  "numeroSale": 3,
   "tariffaSala": 10,
   "tariffaIncisione": 15,
   "tariffaMix": 20

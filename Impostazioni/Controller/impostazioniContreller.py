@@ -15,13 +15,16 @@ class ImpostazioniController():
             with open('Impostazioni/Data/impostazioniModificate.pickle', 'rb') as f:
                 impostazioniSalvate = pickle.load(f)
             print(impostazioniSalvate)
+            test = ModelImpostazioni(impostazioniSalvate['orarioApertura'], impostazioniSalvate['orarioChiusura'], impostazioniSalvate['numeroSale'], 15,20, 30)
+            test2 = ModelImpostazioni(4, 5, 3,15,20, 30)
+            print("TI PREGO FUNZIONA", test)
             # self.model = impostazioniSalvate
         else:
             print("non esiste")
             with open('Impostazioni/Data/impostazioniStandard.json') as f:
                 impostazioniIniziali = json.load(f)
-                print(impostazioniIniziali)
-
+                print("IMPOSTAZIONI INIZIALI LETTE", impostazioniIniziali)
+                print("TEST STAMPA", str(impostazioniIniziali['orarioApertura']))
             # QUA C'E' DA LEGGERE IL FILE E SCRIVERE I DATI MA PRIMA DEVO LEGGERE IL FILE
             # for servizio in impostazioniIniziali:
             #NON SERVE IL METODO perchè non abbiamo una lista, basta che leggiamo i campi ma adesso non so come fare
@@ -31,6 +34,7 @@ class ImpostazioniController():
                 #     Servizio(servizio["id"], servizio["nome"], servizio["tipo"], servizio["posizione"], servizio["prezzo"]))
             with open('Impostazioni/Data/impostazioniModificate.pickle', 'wb') as handle:
                 pickle.dump(impostazioniIniziali, handle, pickle.HIGHEST_PROTOCOL)
+        # print("SECONDA STAMPA: ",impostazioniIniziali)
 
 
 
