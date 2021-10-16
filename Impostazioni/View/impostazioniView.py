@@ -9,6 +9,8 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+
+from Impostazioni.Controller import impostazioniContreller
 from Impostazioni.Controller.impostazioniContreller import ImpostazioniController
 
 
@@ -395,4 +397,23 @@ class ImpostazioniUi_Form(object):
         self.tariffaSalaProveLabel.setText(_translate("ImpostazioniForm", "Tariffa Oraria Sala Prove: "))
         self.tariffaIncisioneLabel.setText(_translate("ImpostazioniForm", "Tariffa Oraria Incisione: "))
         self.NumeroSaleLabel.setText(_translate("ImpostazioniForm", "Numero Sale Disponibili: "))
+
+        contr = impostazioniContreller.ImpostazioniController()
+
+        apertura = contr.getApertura()
+        chiusura = contr.getChiusura()
+        sale = contr.getNumeroSale()
+        tariffa = contr.getTariffaMix()
+        incisione = contr.getTariffaIncisione()
+        mix = contr.getTariffaMix()
+        print("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA STAMPO LA STRINGA", apertura, chiusura,sale, tariffa, incisione, mix)
+        # NOTA: questa funzione del cazzo prende solo stringhe come parametro, per convertire qualsiasi cosa in stringa: str(qualsiasicosa)
+        self.OrarioAperturaLineEdit.setText(str(apertura))
+        self.OrarioChiusuraLineEdit.setText(str(chiusura))
+        self.NumeroSaleLineEdit.setText(str(sale))
+        self.tariffaSalaProveLineEdit.setText(str(tariffa))
+        self.tariffaIncisioneLineEdit.setText(str(incisione))
+        self.tariffaMixLineEdit.setText(str(mix))
+        #funziona ma adesso devo capire come portarmi questi numeri nelle altre classi
+
 import Impostazioni.View.clientiqrc_rc

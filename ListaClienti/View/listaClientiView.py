@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import ListaClienti.Controller.ControllerListaClienti
 
 class ListaClientiUi_Form(object):
     def setupUi(self, Form):

@@ -1,5 +1,5 @@
 import pickle
-
+import Cliente.Model.Cliente
 
 class ControlloreCliente():
     def __init__(self, cliente):
