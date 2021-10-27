@@ -9,9 +9,18 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QWidget
+
+from Cliente.Model.Cliente import Cliente
+from ListaClienti.Controller.ControllerListaClienti import ControlloreListaClienti
 
 
 class Ui_Form(object):
+    # def __init__(self,controller, callback):
+    #     self.controller = controller
+    #     self.callback = callback
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(933, 823)
@@ -171,6 +180,8 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.controller = ControlloreListaClienti()
+        self.pushButton.clicked.connect(self.addCliente)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -180,4 +191,21 @@ class Ui_Form(object):
         self.lineEdit_3.setPlaceholderText(_translate("Form", "Nome"))
         self.lineEdit_2.setPlaceholderText(_translate("Form", "Cellulare"))
         self.pushButton.setText(_translate("Form", "CREA"))
-import testqrc_rc
+
+    def addCliente(self):
+        cognome = self.lineEdit_7.text()
+        nome =  self.lineEdit_3.text()
+        mail = self.lineEdit_6.text()
+        cellulare = self.lineEdit_2.text()
+
+        boxtest = QMessageBox() #oggetto vuoto che però lo vuole per fare la finestra di errore boh è un miracolo che funziona
+
+        if(nome == "" or cognome == "" or mail == "" or cellulare == "" == ""):
+            QMessageBox.critical(boxtest, 'Errore', "uno o più campi vuoti", QMessageBox.Ok, QMessageBox.Ok)
+
+        else:
+            self.controller.aggiungi_cliente(Cliente((nome+cognome).lower(), nome, cognome, mail, cellulare))
+            # self.callback()
+            # self.close()
+
+import ListaClienti.View.clientiqrc_rc

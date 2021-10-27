@@ -1,8 +1,8 @@
 from Cliente.Model import Cliente
 
-class Utente():
+class PrenotazioneClasse():
     def __init__(self, data, oraInizio, oraFine, tipo, cliente):
-        super(Utente, self).__init__()
+        super(PrenotazioneClasse, self).__init__()
         self.data = data
         self.oraInizio = oraInizio
         self.oraFine = oraFine

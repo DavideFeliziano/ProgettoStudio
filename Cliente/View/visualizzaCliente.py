@@ -10,9 +10,14 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import Cliente.Controller.ControllerCliente
+from Cliente.Model.Cliente import Cliente
+from ListaClienti.Controller.ControllerListaClienti import ControlloreListaClienti
 
 
 class Ui_Form(object):
+    def __init__(self, cliente):
+        self.cliente = cliente
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(928, 782)
@@ -273,9 +278,14 @@ class Ui_Form(object):
         self.cellulareCliente_label.setObjectName("cellulareCliente_label")
         self.verticalLayout.addWidget(self.cellulareCliente_label)
 
+        self.cognome_label.setText(str(self.cliente.cognome))
+
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        print("PROVA CLIENTE: " + str(self.cliente.cognome))
+        self.controllor = ControlloreListaClienti()
+        self.Elimina_pushButton.clicked.connect(self.eliminaCliente)
 
 
     def retranslateUi(self, Form):
@@ -283,9 +293,20 @@ class Ui_Form(object):
         Form.setWindowTitle(_translate("Form", "Visualizza Cliente"))
         self.Modifica_pushButton_2.setText(_translate("Form", "Modifica"))
         self.Elimina_pushButton.setText(_translate("Form", "Elimina"))
-        self.NomeCliente_lable.setText(_translate("Form", "Nome"))
-        self.cognome_label.setText(_translate("Form", "Cognome"))
-        self.emailCliente_lable.setText(_translate("Form", "Email"))
-        self.cellulareCliente_label.setText(_translate("Form", "Cellulare"))
+        # self.NomeCliente_lable.setText(_translate("Form", "Nome"))
+        self.NomeCliente_lable.setText(_translate("Form", str(self.cliente.nome)))
+        # self.cognome_label.setText(_translate("Form", "Cognome"))
+        self.cognome_label.setText(_translate("Form", str(self.cliente.cognome)))
+        # self.emailCliente_lable.setText(_translate("Form", "Email"))
+        self.emailCliente_lable.setText(_translate("Form", str(self.cliente.email)))
+        # self.cellulareCliente_label.setText(_translate("Form", "Cellulare"))
+        self.cellulareCliente_label.setText(_translate("Form", str(self.cliente.cellulare)))
+
+#Metodo di eliminazione totalmente non copiato, sono o non sono un maestro di questo linguaggio
+    def eliminaCliente(self):
+        idEliminato = self.cliente.id
+        print("STO PER ELIMINARE: " + idEliminato)
+        self.controllor.elimina_cliente_by_id(idEliminato)
+        print(str(self.cliente.cognome) + " dorme coi pesci")
 
 import Cliente.View.clientiqrc_rc

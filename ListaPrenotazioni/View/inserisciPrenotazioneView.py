@@ -9,6 +9,13 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
+
+from ListaClienti.Model.ListaClienti import ListaClienti
+from ListaClienti.Controller.ControllerListaClienti import ControlloreListaClienti
+from Cliente.Model.Cliente import Cliente
+from Cliente.Controller.ControllerCliente import ControlloreCliente
+from Prenotazione.Model.Prenotazione import PrenotazioneClasse
 
 
 class ListaPrenotazioniUi_Form(object):
@@ -261,6 +268,25 @@ class ListaPrenotazioniUi_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+#CODICE PER LA LIST VIEW --------------------------------------------------------------------------------------------
+        self.listviewModel = QStandardItemModel(self.selezionaClienteListView)
+        self.controller = ControlloreListaClienti()
+
+        for cliente in self.controller.get_lista_dei_clienti():
+            item = QStandardItem()
+            item.setText(cliente.nome + " " + cliente.cognome)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(36)
+            item.setFont(font)
+            self.listviewModel.appendRow(item)
+
+        self.selezionaClienteListView.setModel(self.listviewModel)
+#-------------------------------------------------------------------------------come l'altra listview, anche questa non si aggiorna perchè sono una persona orribile
+        # print("TEST STAMPA PRENOTAZIONE" + str(self.selezionaClienteListView.selectedIndexes()))
+        self.salvaPushButton.clicked.connect(self.aggiungiPrenotazione)
+
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Inserisci Prenotazione"))
@@ -271,4 +297,33 @@ class ListaPrenotazioniUi_Form(object):
         self.oreInizioLineEdit.setPlaceholderText(_translate("Form", "Inserisci Orario Inizio"))
         self.oreFineLineEdit.setPlaceholderText(_translate("Form", "Inserisci Orario Fine"))
         self.salvaPushButton.setText(_translate("Form", "SALVA"))
+
+    def aggiungiPrenotazione(self):
+
+        self.controller2 = ControlloreListaClienti()
+        indice = self.selezionaClienteListView.selectedIndexes()[0].row()
+        clienteSelezionato = self.controller2.get_cliente_by_index(indice)
+        print("vediamo che è sto indice " + str(indice))
+        print("provo a stampare i campi: " +str(clienteSelezionato.nome) +" aggiungo anche cognome: "+str(clienteSelezionato.cognome))
+
+#-------------------------------ok il cliente ce l'ho, visto che non ho messo un oggetto sul model di prenotazione, il campo "cliente" è solo l'id, il resto dei campi li prenod dai button
+        idSelezionato = clienteSelezionato.id
+        dataSelezionata = self.dataSelezionataLabel.text()
+        oraInizioInserita = self.oreInizioLineEdit.text()
+        oraFineInserita = self.oreFineLineEdit.text()
+#Ok per il tipo in teoria dovrei fare un metodo ma per adesso faccio solo un if
+        tipoNumerico = 0
+        if(self.salaRadioButton.clicked):
+            tipoNumerico = 1
+            print("SALA : " +str(tipoNumerico))
+        elif(self.incisioneRadioButton.clicked):
+            tipoNumerico = 2
+            print("INCISIONE :" + str(tipoNumerico))
+        elif(self.mixRadioButton.clicked):
+            tipoNumerico = 3
+            print("MIX :" +str(tipoNumerico))
+
+        print("STAMPO TUTTO: " +idSelezionato +" il: "+dataSelezionata +" dalle: "+oraInizioInserita +" alle: "+ oraFineInserita +" TIPO: " +str(tipoNumerico))
+#sistemare sta cosa degli if
+
 import ListaPrenotazioni.View.listaprenotazioni_rc

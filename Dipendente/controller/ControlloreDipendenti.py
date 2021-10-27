@@ -1,6 +1,7 @@
 import pickle
 import os.path
 
+import Dipendente.Model.Dipendente
 
 class ControlloreDipendente():
     def __init__(self, dipendente):

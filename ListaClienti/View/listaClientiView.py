@@ -9,9 +9,21 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import ListaClienti.Controller.ControllerListaClienti
+from PyQt5.QtGui import QStandardItem, QStandardItemModel
+
+from Cliente.View import visualizzaCliente
+from ListaClienti.Controller.ControllerListaClienti import ControlloreListaClienti
+from Cliente.Model.Cliente import Cliente
+from ListaClienti.View.inserisciClienteView import Ui_Form
+from Cliente.View.visualizzaCliente import Ui_Form
 
 class ListaClientiUi_Form(object):
+    # def __init__(self):
+    #     super(ListaClientiUi_Form, self).__init__()
+    #     # self.controller = ControlloreListaClienti()
+    #     # self.update_ui()
+
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(928, 782)
@@ -168,6 +180,27 @@ class ListaClientiUi_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        self.pushButton.clicked.connect(self.goToInserisciCliente)
+
+
+        # CODICE PER LA LISTVIEW  ------------------------------------------------------------------------------------
+        self.listview_model = QStandardItemModel(self.listView)
+        self.controller = ControlloreListaClienti()
+        # self.listView.show()
+
+        for cliente in self.controller.get_lista_dei_clienti():
+            item = QStandardItem()
+            item.setText(cliente.nome +" "+ cliente.cognome)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(36)
+            item.setFont(font)
+            self.listview_model.appendRow(item)
+
+        self.listView.setModel(self.listview_model)
+
+        self.pushButton_2.clicked.connect(self.goToClienteView)
+
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -175,4 +208,43 @@ class ListaClientiUi_Form(object):
         self.pushButton.setText(_translate("Form", "Nuovo"))
         self.pushButton_2.setText(_translate("Form", "Visualizza"))
 
-#import ListaClienti.View.clientiqrc_rc
+    def goToInserisciCliente(self):
+        # self.inserisciClienteView = Ui_Form(self.controller, self.update_ui)
+        # self.inserisciClienteView.show()
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ListaClienti.View.inserisciClienteView.Ui_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
+
+    def goToClienteView(self):
+        selected = self.listView.selectedIndexes()[0].row()
+        clientSelected = self.controller.get_cliente_by_index(selected)
+        print("INDICE: " + str(selected))
+        print("cliente selezionato " + str(clientSelected.nome) + str(clientSelected.cognome))
+        # self.vista_cliente = VistaCliente(clientSelected, self.controller.elimina_cliente_by_id, self.update_ui)
+        # self.vista_cliente.show()
+        self.Form2 = QtWidgets.QMainWindow()
+        self.ui2 = visualizzaCliente.Ui_Form(clientSelected)
+        self.ui2.setupUi(self.Form2)
+        self.Form2.show()
+        # print("PER FAVORE UN 18: " + str(clientSelected.id))
+    #------------------------------------------------fin qua funziona, manca eliminazione e modifica che non farò
+
+    # def update_ui(self):
+    #     self.listview_model = QStandardItemModel(self.list_view)
+    #     for cliente in self.controller.get_lista_dei_clienti():
+    #         item = QStandardItem()
+    #         item.setText(cliente.nome+" "+cliente.cognome)
+    #         item.setEditable(False)
+    #         font = item.font()
+    #         font.setPointSize(18)
+    #         item.setFont(font)
+    #         self.listview_model.appendRow(item)
+    #     self.list_view.setModel(self.listview_model)
+    #
+    # def closeEvent(self, event):
+    #     self.controller.save_data()
+
+
+
+import ListaClienti.View.clientiqrc_rc
