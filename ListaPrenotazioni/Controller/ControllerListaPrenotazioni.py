@@ -15,7 +15,6 @@ class ControlloreListaPrenotazioni():
             self.model = listaPrenotazioniSalvata
 
     def aggiungiPrenotazione(self, prenotazione):
-        # print("STO NEL CONTROLLER " + str(prenotazione.cliente))
         self.model.aggiungiPrenotazione(prenotazione)
         with open('ListaPrenotazioni/data/listaPrenotazioniSalvata.pickle', 'wb') as handle:
             pickle.dump(self.model, handle, pickle.HIGHEST_PROTOCOL)

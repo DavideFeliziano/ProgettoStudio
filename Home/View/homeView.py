@@ -16,6 +16,7 @@ from ListaClienti.View.listaClientiView import ListaClientiUi_Form
 from ListaDipendenti.View.listaDipendentiView import ListaDipendentiUi_Form
 from Impostazioni.View.impostazioniView import ImpostazioniUi_Form
 from ListaPrenotazioni.View.inserisciPrenotazioneView import ListaPrenotazioniUi_Form
+from ListaPrenotazioni.Controller.ControllerListaPrenotazioni import ControlloreListaPrenotazioni
 
 
 class Ui_Form(object):
@@ -312,25 +313,47 @@ class Ui_Form(object):
         self.calendario.selectionChanged.connect(self.mostraData)
 
         #CODICE PER LA LISTVIEW
-        self.listview_model = QStandardItemModel(self.prenotazioniListView)
-        self.prenotazioniListView.show()
-        self.item =QStandardItem()
-        self.item.setText(self.dataSelezionata)
-        self.item.setEditable(False)
-        #due righe per il font
-        self.font = self.item.font()
-        self.font.setPointSize(36)
-        self.item.setFont(font)
+        # self.listview_model = QStandardItemModel(self.prenotazioniListView)
+        # self.prenotazioniListView.show()
+        # self.item =QStandardItem()
+        # self.item.setText(self.dataSelezionata)
+        # self.item.setEditable(False)
+        # #due righe per il font
+        # self.font = self.item.font()
+        # self.font.setPointSize(36)
+        # self.item.setFont(font)
+        #
+        # self.listview_model.appendRow(self.item)
+        # #creo un altro item per vedere se funziona la lista
+        # self.item2 = QStandardItem()
+        # self.item2.setText("palle")
+        # self.item2.setFont(font)
+        # self.listview_model.appendRow(self.item2)
 
-        self.listview_model.appendRow(self.item)
-        #creo un altro item per vedere se funziona la lista
-        self.item2 = QStandardItem()
-        self.item2.setText("palle")
-        self.item2.setFont(font)
-        self.listview_model.appendRow(self.item2)
+        self.modelListview = QStandardItemModel(self.prenotazioniListView)
+        self.prenotazioniController = ControlloreListaPrenotazioni()
 
-        self.prenotazioniListView.setModel(self.listview_model)
+        for prenotazione in self.prenotazioniController.getListaPrenotazioni():
+            item = QStandardItem()
+            item.setText(prenotazione.cliente +" "+ prenotazione.oraInizio +" "+ prenotazione.tipo)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(28)
+            item.setFont(font)
 
+            dataIf = self.calendario.selectedDate().toString("dd-MM-yyyy")
+            print("OK, vediamo le date: "+dataIf +" " +prenotazione.data)
+            if(dataIf==prenotazione.data):
+                print("DAI DAI DAI DAI  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                self.modelListview.appendRow(item)
+            else:
+                print("deh niente non si riesce")
+
+        self.prenotazioniListView.setModel(self.modelListview)
+
+        self.calendario.selectionChanged.connect(self.prenotazioniUpdate)
+
+#servirebbe un modo per aggiornare almeno la home ma adesso non mi viene in mente niente
 
         date = QDate(31, 12, 2020)
         # setting date text format
@@ -387,4 +410,27 @@ class Ui_Form(object):
         #NOTA: per passare i dati alla listview, lo devo fare da qui sennò non riesco ad accedere al click
         # sul calendario
         #forse sta roba dovrebbe stare sul controller
+
+    def prenotazioniUpdate(self):
+        print("già questo è segno buono")
+        self.modelListview = QStandardItemModel(self.prenotazioniListView)
+        self.prenotazioniController = ControlloreListaPrenotazioni()
+
+        for prenotazione in self.prenotazioniController.getListaPrenotazioni():
+            item = QStandardItem()
+            item.setText(prenotazione.cliente + " " + prenotazione.oraInizio + " " + prenotazione.tipo)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(28)
+            item.setFont(font)
+
+            dataIf = self.calendario.selectedDate().toString("dd-MM-yyyy")
+            print("OK, vediamo le date: " + dataIf + " " + prenotazione.data)
+            if (dataIf == prenotazione.data):
+                self.modelListview.appendRow(item)
+            else:
+                print("oh no")
+
+        self.prenotazioniListView.setModel(self.modelListview)
+
 import Home.View.home_rc
