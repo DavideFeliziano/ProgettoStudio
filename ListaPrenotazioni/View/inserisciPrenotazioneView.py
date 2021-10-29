@@ -10,12 +10,15 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
+from PyQt5.QtWidgets import QMessageBox
 
 from ListaClienti.Model.ListaClienti import ListaClienti
 from ListaClienti.Controller.ControllerListaClienti import ControlloreListaClienti
 from Cliente.Model.Cliente import Cliente
 from Cliente.Controller.ControllerCliente import ControlloreCliente
 from Prenotazione.Model.Prenotazione import PrenotazioneClasse
+from ListaPrenotazioni.Controller.ControllerListaPrenotazioni import ControlloreListaPrenotazioni
+
 
 
 class ListaPrenotazioniUi_Form(object):
@@ -285,6 +288,7 @@ class ListaPrenotazioniUi_Form(object):
 #-------------------------------------------------------------------------------come l'altra listview, anche questa non si aggiorna perchè sono una persona orribile
         # print("TEST STAMPA PRENOTAZIONE" + str(self.selezionaClienteListView.selectedIndexes()))
         self.salvaPushButton.clicked.connect(self.aggiungiPrenotazione)
+        self.controllerPrenotazioni =ControlloreListaPrenotazioni
 
 
     def retranslateUi(self, Form):
@@ -303,8 +307,8 @@ class ListaPrenotazioniUi_Form(object):
         self.controller2 = ControlloreListaClienti()
         indice = self.selezionaClienteListView.selectedIndexes()[0].row()
         clienteSelezionato = self.controller2.get_cliente_by_index(indice)
-        print("vediamo che è sto indice " + str(indice))
-        print("provo a stampare i campi: " +str(clienteSelezionato.nome) +" aggiungo anche cognome: "+str(clienteSelezionato.cognome))
+        # print("indice " + str(indice))
+        # print("Cliente Selezionato: " +str(clienteSelezionato.nome) +" "+str(clienteSelezionato.cognome))
 
 #-------------------------------ok il cliente ce l'ho, visto che non ho messo un oggetto sul model di prenotazione, il campo "cliente" è solo l'id, il resto dei campi li prenod dai button
         idSelezionato = clienteSelezionato.id
@@ -313,17 +317,42 @@ class ListaPrenotazioniUi_Form(object):
         oraFineInserita = self.oreFineLineEdit.text()
 #Ok per il tipo in teoria dovrei fare un metodo ma per adesso faccio solo un if
         tipoNumerico = 0
-        if(self.salaRadioButton.clicked):
+        if(self.salaRadioButton.isChecked()):
             tipoNumerico = 1
             print("SALA : " +str(tipoNumerico))
-        elif(self.incisioneRadioButton.clicked):
+        elif(self.incisioneRadioButton.isChecked()):
             tipoNumerico = 2
             print("INCISIONE :" + str(tipoNumerico))
-        elif(self.mixRadioButton.clicked):
+        elif(self.mixRadioButton.isChecked()):
             tipoNumerico = 3
             print("MIX :" +str(tipoNumerico))
+#mi vergogno terribilmente di quello che sto per fare
+        tipoString = ""
+        if(tipoNumerico == 0):
+            tipoString = "nessuno"
+        elif(tipoNumerico==1):
+            tipoString = "sala prove"
+        elif(tipoNumerico==2):
+            tipoString = "incisione"
+        elif(tipoNumerico==3):
+            tipoString = "mix"
 
-        print("STAMPO TUTTO: " +idSelezionato +" il: "+dataSelezionata +" dalle: "+oraInizioInserita +" alle: "+ oraFineInserita +" TIPO: " +str(tipoNumerico))
-#sistemare sta cosa degli if
+        print("DATI PRENOTAZIONE: " +idSelezionato +" il: "+dataSelezionata +" dalle: "+oraInizioInserita +" alle: "+ oraFineInserita +" TIPO: " +str(tipoString))
+
+        test = PrenotazioneClasse("AAAAAAAAAAAA","ora","ora","tipo","cliente")
+        test2 = PrenotazioneClasse("porco", "dio","laido","cane","lercio")
+        scroto = "scroto"
+        print("stampo test: "+str(test.data))
+        # self.controllerPrenotazioni.aggiungiPrenotazione(PrenotazioneClasse("palle","scroto","testicoli","topo","fica"))
+        self.controllerPrenotazioni.aggiungiPrenotazione(self,test)
+        print("FACCIO UN TEST PRIMA: "+str(test) +" "+ str(self.controllerPrenotazioni.getListaPrenotazioni()))
+
+        boxtest = QMessageBox()  # oggetto vuoto che però lo vuole per fare la finestra di errore boh è un miracolo che funziona
+
+        if (idSelezionato == "" or dataSelezionata == "" or oraInizioInserita == "" or oraFineInserita == "" or tipoString == "nessuno"):
+            QMessageBox.critical(boxtest, 'Errore', "uno o più campi vuoti", QMessageBox.Ok, QMessageBox.Ok)
+
+        # else:
+        #     self.controllerPrenotazioni.aggiungiPrenotazione(PrenotazioneClasse(dataSelezionata,oraInizioInserita,oraFineInserita,tipoString,idSelezionato))
 
 import ListaPrenotazioni.View.listaprenotazioni_rc

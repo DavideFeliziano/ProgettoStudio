@@ -1,4 +1,4 @@
-from Cliente.Model import Cliente
+
 
 class PrenotazioneClasse():
     def __init__(self, data, oraInizio, oraFine, tipo, cliente):
