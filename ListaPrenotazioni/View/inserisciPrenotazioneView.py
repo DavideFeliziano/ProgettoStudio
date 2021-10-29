@@ -320,6 +320,8 @@ class ListaPrenotazioniUi_Form(object):
         dataSelezionata = self.dataSelezionataLabel.text()
         oraInizioInserita = self.oreInizioLineEdit.text()
         oraFineInserita = self.oreFineLineEdit.text()
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ qui serve qualche controllo sugli orari, usare un oggetto di Impostazioni.
+
 #Ok per il tipo in teoria dovrei fare un metodo ma per adesso faccio solo un if
         tipoNumerico = 0
         if(self.salaRadioButton.isChecked()):
