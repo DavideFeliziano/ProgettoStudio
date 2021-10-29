@@ -6,7 +6,6 @@ class ListaPrenotazioni():
         self.listaPrenotazioni = []
 
     def aggiungiPrenotazione(self, prenotazione):
-        print("STO NEL MODEL")
         self.listaPrenotazioni.append(prenotazione)
         
 

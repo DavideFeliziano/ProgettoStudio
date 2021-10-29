@@ -205,7 +205,6 @@ class Ui_Form(object):
 
         else:
             self.controller.aggiungi_cliente(Cliente((nome+cognome).lower(), nome, cognome, mail, cellulare))
-            # self.callback()
-            # self.close()
+            QMessageBox.critical(boxtest, 'DAJE', "Cliente inserito mo chiudi la lista perchè sennò non si aggiorna", QMessageBox.Ok, QMessageBox.Ok)
 
 import ListaClienti.View.clientiqrc_rc

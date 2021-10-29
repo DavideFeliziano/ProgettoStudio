@@ -288,7 +288,7 @@ class ListaPrenotazioniUi_Form(object):
 #-------------------------------------------------------------------------------come l'altra listview, anche questa non si aggiorna perchè sono una persona orribile
         # print("TEST STAMPA PRENOTAZIONE" + str(self.selezionaClienteListView.selectedIndexes()))
         self.salvaPushButton.clicked.connect(self.aggiungiPrenotazione)
-        self.controllerPrenotazioni =ControlloreListaPrenotazioni
+        self.controllerPrenotazioni =ControlloreListaPrenotazioni()
 
 
     def retranslateUi(self, Form):
@@ -339,20 +339,17 @@ class ListaPrenotazioniUi_Form(object):
 
         print("DATI PRENOTAZIONE: " +idSelezionato +" il: "+dataSelezionata +" dalle: "+oraInizioInserita +" alle: "+ oraFineInserita +" TIPO: " +str(tipoString))
 
-        test = PrenotazioneClasse("AAAAAAAAAAAA","ora","ora","tipo","cliente")
-        test2 = PrenotazioneClasse("porco", "dio","laido","cane","lercio")
-        scroto = "scroto"
-        print("stampo test: "+str(test.data))
-        # self.controllerPrenotazioni.aggiungiPrenotazione(PrenotazioneClasse("palle","scroto","testicoli","topo","fica"))
-        self.controllerPrenotazioni.aggiungiPrenotazione(self,test)
-        print("FACCIO UN TEST PRIMA: "+str(test) +" "+ str(self.controllerPrenotazioni.getListaPrenotazioni()))
+        #-------------------------------questo lo lascio in memoria delle 5 ore che ho perso perchè l'editor non mette da solo le parentesi però se non le metti piange. ogio l'universo.
+        # controllerLocale = ControlloreListaPrenotazioni()
+        # controllerLocale.aggiungiPrenotazione(test)
 
         boxtest = QMessageBox()  # oggetto vuoto che però lo vuole per fare la finestra di errore boh è un miracolo che funziona
 
         if (idSelezionato == "" or dataSelezionata == "" or oraInizioInserita == "" or oraFineInserita == "" or tipoString == "nessuno"):
             QMessageBox.critical(boxtest, 'Errore', "uno o più campi vuoti", QMessageBox.Ok, QMessageBox.Ok)
 
-        # else:
-        #     self.controllerPrenotazioni.aggiungiPrenotazione(PrenotazioneClasse(dataSelezionata,oraInizioInserita,oraFineInserita,tipoString,idSelezionato))
+        else:
+            self.controllerPrenotazioni.aggiungiPrenotazione(PrenotazioneClasse(dataSelezionata,oraInizioInserita,oraFineInserita,tipoString,idSelezionato))
+            QMessageBox.critical(boxtest, 'GHE SBORO', "PRENOTAZIONE INSERITA!", QMessageBox.Ok, QMessageBox.Ok)
 
 import ListaPrenotazioni.View.listaprenotazioni_rc
