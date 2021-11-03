@@ -342,12 +342,12 @@ class Ui_Form(object):
             item.setFont(font)
 
             dataIf = self.calendario.selectedDate().toString("dd-MM-yyyy")
-            print("OK, vediamo le date: "+dataIf +" " +prenotazione.data)
+            # print("OK, vediamo le date: "+dataIf +" " +prenotazione.data)
             if(dataIf==prenotazione.data):
-                print("DAI DAI DAI DAI  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+                # print("DAI DAI DAI DAI  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
                 self.modelListview.appendRow(item)
-            else:
-                print("deh niente non si riesce")
+            # else:
+            #     print("deh niente non si riesce")
 
         self.prenotazioniListView.setModel(self.modelListview)
 
@@ -412,7 +412,7 @@ class Ui_Form(object):
         #forse sta roba dovrebbe stare sul controller
 
     def prenotazioniUpdate(self):
-        print("già questo è segno buono")
+        # print("già questo è segno buono")
         self.modelListview = QStandardItemModel(self.prenotazioniListView)
         self.prenotazioniController = ControlloreListaPrenotazioni()
 
@@ -425,11 +425,11 @@ class Ui_Form(object):
             item.setFont(font)
 
             dataIf = self.calendario.selectedDate().toString("dd-MM-yyyy")
-            print("OK, vediamo le date: " + dataIf + " " + prenotazione.data)
+            # print("OK, vediamo le date: " + dataIf + " " + prenotazione.data)
             if (dataIf == prenotazione.data):
                 self.modelListview.appendRow(item)
-            else:
-                print("oh no")
+            # else:
+            #     print("oh no")
 
         self.prenotazioniListView.setModel(self.modelListview)
 

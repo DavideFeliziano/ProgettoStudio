@@ -14,10 +14,6 @@ class ControlloreCliente():
     def get_cognome_cliente(self):
         return self.model.cognome
 
-    #def get_cf_cliente(self):
-     #   return self.model.cf
-
-
     def get_email_cliente(self):
         return self.model.email
 

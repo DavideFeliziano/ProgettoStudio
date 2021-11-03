@@ -180,6 +180,7 @@ class Ui_Form(object):
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
+
         self.controller = ControlloreListaClienti()
         self.pushButton.clicked.connect(self.addCliente)
 

@@ -10,8 +10,12 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import Dipendente.Controller.ControlloreDipendenti
+from ListaDipendenti.Controller.ControllerListaDipendenti import ControlloreListaDipendenti
 
 class Ui_Form(object):
+    def __init__(self, dipendente):
+        self.dipendente = dipendente
+
     def setupUi(self, Form):
         Form.setObjectName("Form")
         Form.resize(928, 782)
@@ -277,15 +281,28 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        self.controller = ControlloreListaDipendenti()
+        self.Elimina_pushButton.clicked.connect(self.eliminaDipendente)
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Visualizza Dipendente"))
         self.Modifica_pushButton_2.setText(_translate("Form", "Modifica"))
         self.Elimina_pushButton.setText(_translate("Form", "Elimina"))
-        self.NomeDipendente_label.setText(_translate("Form", "Nome"))
-        self.CognomeDipendente_label.setText(_translate("Form", "Cognome"))
-        self.EmailDipendente_label.setText(_translate("Form", "Email"))
-        self.CellulareDipendente_label.setText(_translate("Form", "Cellulare"))
+        # self.NomeDipendente_label.setText(_translate("Form", "Nome"))
+        self.NomeDipendente_label.setText(_translate("Form", str(self.dipendente.nome)))
+        # self.CognomeDipendente_label.setText(_translate("Form", "Cognome"))
+        self.CognomeDipendente_label.setText(_translate("Form", str(self.dipendente.cognome)))
+        # self.EmailDipendente_label.setText(_translate("Form", "Email"))
+        self.EmailDipendente_label.setText(_translate("Form", str(self.dipendente.email)))
+        # self.CellulareDipendente_label.setText(_translate("Form", "Cellulare"))
+        self.CellulareDipendente_label.setText(_translate("Form", str(self.dipendente.cellulare)))
+
+    def eliminaDipendente(self):
+        idEliminato = self.dipendente.id
+        print("STO PER ELIMINARE: " + idEliminato)
+        self.controller.elimina_dipendente_by_id(idEliminato)
+        print(str(self.dipendente.cognome) + " dorme coi pesci")
 
 
 import Dipendente.View.dipendentiqrc_rc

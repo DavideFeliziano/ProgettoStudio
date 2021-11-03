@@ -228,22 +228,8 @@ class ListaClientiUi_Form(object):
         self.ui2.setupUi(self.Form2)
         self.Form2.show()
         # print("PER FAVORE UN 18: " + str(clientSelected.id))
-    #------------------------------------------------fin qua funziona, manca eliminazione e modifica che non farò
 
-    # def update_ui(self):
-    #     self.listview_model = QStandardItemModel(self.list_view)
-    #     for cliente in self.controller.get_lista_dei_clienti():
-    #         item = QStandardItem()
-    #         item.setText(cliente.nome+" "+cliente.cognome)
-    #         item.setEditable(False)
-    #         font = item.font()
-    #         font.setPointSize(18)
-    #         item.setFont(font)
-    #         self.listview_model.appendRow(item)
-    #     self.list_view.setModel(self.listview_model)
-    #
-    # def closeEvent(self, event):
-    #     self.controller.save_data()
+
 
 
 

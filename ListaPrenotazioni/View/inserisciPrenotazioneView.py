@@ -18,6 +18,7 @@ from Cliente.Model.Cliente import Cliente
 from Cliente.Controller.ControllerCliente import ControlloreCliente
 from Prenotazione.Model.Prenotazione import PrenotazioneClasse
 from ListaPrenotazioni.Controller.ControllerListaPrenotazioni import ControlloreListaPrenotazioni
+from Impostazioni.View.impostazioniView import ImpostazioniUi_Form
 
 
 
@@ -316,12 +317,15 @@ class ListaPrenotazioniUi_Form(object):
         nomeSelezionato = clienteSelezionato.nome
         cognomeSelezionato = clienteSelezionato.cognome
         id = nomeSelezionato +" "+ cognomeSelezionato
-        print("STampo ID: "+id)
+        # print("STampo ID: "+id)
         dataSelezionata = self.dataSelezionataLabel.text()
         oraInizioInserita = self.oreInizioLineEdit.text()
         oraFineInserita = self.oreFineLineEdit.text()
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ qui serve qualche controllo sugli orari, usare un oggetto di Impostazioni.
-
+        # impostazioni = ImpostazioniUi_Form()
+        # aperturaDef = impostazioni.OrarioAperturaLineEdit.text()
+        # chiusuraDef = impostazioni.OrarioChiusuraLineEdit.text()
+        # print("test rapido @@@@@@@@@@@@@@  " + aperturaDef +" "+chiusuraDef)
 #Ok per il tipo in teoria dovrei fare un metodo ma per adesso faccio solo un if
         tipoNumerico = 0
         if(self.salaRadioButton.isChecked()):

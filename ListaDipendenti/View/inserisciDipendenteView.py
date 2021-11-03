@@ -9,6 +9,11 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QWidget
+
+from Dipendente.Model.Dipendente import Dipendente
+from ListaDipendenti.Controller.ControllerListaDipendenti import ControlloreListaDipendenti
 
 
 class Ui_Form(object):
@@ -172,6 +177,9 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        self.controller = ControlloreListaDipendenti()
+        self.pushButton.clicked.connect(self.addDipendente)
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Inserisci Dipendente"))
@@ -180,4 +188,22 @@ class Ui_Form(object):
         self.lineEdit_3.setPlaceholderText(_translate("Form", "Nome"))
         self.lineEdit_2.setPlaceholderText(_translate("Form", "Cellulare"))
         self.pushButton.setText(_translate("Form", "CREA"))
-import testqrc_rc
+
+    def addDipendente(self):
+        cognome = self.lineEdit_7.text()
+        nome = self.lineEdit_3.text()
+        mail = self.lineEdit_6.text()
+        cellulare = self.lineEdit_2.text()
+
+        boxtest = QMessageBox()  # oggetto vuoto che però lo vuole per fare la finestra di errore boh è un miracolo che funziona
+
+        if (nome == "" or cognome == "" or mail == "" or cellulare == "" == ""):
+            QMessageBox.critical(boxtest, 'Errore', "uno o più campi vuoti", QMessageBox.Ok, QMessageBox.Ok)
+
+        else:
+            self.controller.aggiungi_dipendente(Dipendente((nome + cognome).lower(), nome, cognome, mail, cellulare))
+            QMessageBox.critical(boxtest, 'DAJE', "Dipendente inserito mo chiudi la lista perchè sennò non si aggiorna",
+                                 QMessageBox.Ok, QMessageBox.Ok)
+
+
+import ListaDipendenti.View.clientiqrc_rc

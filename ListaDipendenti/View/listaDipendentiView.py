@@ -9,6 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtGui import QStandardItem, QStandardItemModel
+
+import Dipendente.View.visualizzaDipendente
+import ListaDipendenti.View.inserisciDipendenteView
+from Dipendente.View.visualizzaDipendente import Ui_Form
+from ListaDipendenti.Controller.ControllerListaDipendenti import ControlloreListaDipendenti
+from ListaDipendenti.View.inserisciDipendenteView import Ui_Form
+
 
 
 class ListaDipendentiUi_Form(object):
@@ -169,9 +177,51 @@ class ListaDipendentiUi_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
+        self.pushButton.clicked.connect(self.goToInserisciDipendente)
+
+        # CODICE PER LA LISTVIEW  ------------------------------------------------------------------------------------
+        self.listview_model = QStandardItemModel(self.listView)
+        self.controller = ControlloreListaDipendenti()
+        # self.listView.show()
+
+        for dipendente in self.controller.get_lista_dei_dipendenti():
+            item = QStandardItem()
+            item.setText(dipendente.nome + " " + dipendente.cognome)
+            item.setEditable(False)
+            font = item.font()
+            font.setPointSize(36)
+            item.setFont(font)
+            self.listview_model.appendRow(item)
+
+        self.listView.setModel(self.listview_model)
+
+        self.pushButton_2.clicked.connect(self.goToDipendenteView)
+
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Lista Dipendenti"))
         self.pushButton.setText(_translate("Form", "Nuovo"))
         self.pushButton_2.setText(_translate("Form", "Visualizza"))
+
+    def goToInserisciDipendente(self):
+        # self.inserisciClienteView = Ui_Form(self.controller, self.update_ui)
+        # self.inserisciClienteView.show()
+        self.Form = QtWidgets.QMainWindow()
+        self.ui = ListaDipendenti.View.inserisciDipendenteView.Ui_Form()
+        self.ui.setupUi(self.Form)
+        self.Form.show()
+
+    def goToDipendenteView(self):
+        selected = self.listView.selectedIndexes()[0].row()
+        dipendenteSelected = self.controller.get_dipendente_by_index(selected)
+        print("INDICE: " + str(selected))
+        print("dipendente selezionato " + str(dipendenteSelected.nome) + str(dipendenteSelected.cognome))
+
+        self.Form2 = QtWidgets.QMainWindow()
+        # self.ui2 = Dipendente.View.visualizzaDipendente.Ui_Form(dipendenteSelected)
+        self.ui2 = Dipendente.View.visualizzaDipendente.Ui_Form(dipendenteSelected)
+        self.ui2.setupUi(self.Form2)
+        self.Form2.show()
+
+
 #import ListaDipendenti.View.clientiqrc_rc
