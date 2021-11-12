@@ -16,10 +16,6 @@ class ControlloreDipendente():
     def get_cognome_dipendente(self):
         return self.model.cognome
 
-    #def get_cf_dipendente(self):
-      #  return self.model.cf
-
-
     def get_email_dipendente(self):
         return self.model.email
 
