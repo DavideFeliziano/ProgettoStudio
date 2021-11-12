@@ -37,6 +37,6 @@ if __name__ == '__main__':
     # ui.setupUi(mainwin)
     # mainwin.show()
     sys.exit(app.exec_())
-
+#non mi ricordo più che è sta roba però non tocco niente per paura di roviare tutto
 
 
